@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../CSS/ContactPage.module.css";
-import useContactForm from "../../../hooks/useContactForm.jsx";
+import useContactForm from "../../../hooks/useContactForm.js";
 import { useEffect } from "react";
 
 const ContactPage = () => {
