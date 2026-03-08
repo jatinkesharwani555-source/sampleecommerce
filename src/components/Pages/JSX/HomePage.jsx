@@ -1,11 +1,11 @@
 import styles from '../CSS/HomePage.module.css';
-import HomePageOptions from './HomePageOptions';
-import ContactPage from './ContactPage';
-import Carousel from '../../Carousel';
-import BestSellerProducts from '../../Products/JSX/BestSellerProducts';
-import AllProductList from '../../Products/JSX/AllProductList';
-import { homeSlides } from '../../../constants/homeSlides';
-import ShopByCategory from '../../Products/JSX/ShopByCategory';
+import HomePageOptions from './HomePageOptions.jsx';
+import ContactPage from './ContactPage.jsx';
+import Carousel from '../../Carousel.jsx';
+import BestSellerProducts from '../../Products/JSX/BestSellerProducts.jsx';
+import AllProductList from '../../Products/JSX/AllProductList.jsx';
+import { homeSlides } from '../../../constants/homeSlides.jsx';
+import ShopByCategory from '../../Products/JSX/ShopByCategory.jsx';
 
 const HomePage = () => {
   return (

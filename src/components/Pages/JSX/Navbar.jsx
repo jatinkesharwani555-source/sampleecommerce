@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import styles from "../CSS/Navbar.module.css";
 import { useState } from "react";
-import SearchBar from "../../SearchBar";
+import SearchBar from "../../SearchBar.jsx";
 import {
   FaHome,
   FaInfoCircle,

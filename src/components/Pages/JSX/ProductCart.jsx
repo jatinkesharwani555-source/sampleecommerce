@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import style from "../CSS/ProductCart.module.css";
-import useCart from "../../../hooks/useCart";
+import useCart from "../../../hooks/useCart.js";
 import { SHIPPING_FEE } from "../../../constants/cart.constants";
-import LoadingSpinner from "../../LoadingSpinner";
+import LoadingSpinner from "../../LoadingSpinner.jsx";
 
 const ProductCart = () => {
   const navigate = useNavigate();
