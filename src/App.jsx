@@ -13,7 +13,7 @@ import DeleteProduct from './components/Admin/DeleteProduct';
 import ImagePreview from './components/Products/JSX/ProductImagePreview';
 
 // Lazy load big components
-const SignUp = lazy(() => import('./components/login&logout/JSX/SignUp'));
+const SignUp = lazy(() => import('./components/Login&Logout/JSX/SignUp'));
 const Login = lazy(() => import('./components/Login&Logout/JSX/Login'));
 const Logout = lazy(() => import('./components/Login&Logout/JSX/Logout'));
 const HomePage = lazy(() => import('./components/Pages/JSX/HomePage'));
