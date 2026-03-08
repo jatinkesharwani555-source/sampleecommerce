@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "./Carousel.module.css";
 
 const Carousel = ({ slides, autoPlay = true, delay = 3000 }) => {

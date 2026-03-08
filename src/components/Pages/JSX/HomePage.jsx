@@ -1,7 +1,7 @@
 import styles from '../CSS/HomePage.module.css';
 import HomePageOptions from './HomePageOptions';
 import ContactPage from './ContactPage';
-import Carousel from '../../carousel';
+import Carousel from '../../Carousel';
 import BestSellerProducts from '../../Products/JSX/BestSellerProducts';
 import AllProductList from '../../Products/JSX/AllProductList';
 import { homeSlides } from '../../../constants/homeSlides';
