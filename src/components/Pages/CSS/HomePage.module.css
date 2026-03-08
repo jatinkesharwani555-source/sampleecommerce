@@ -1,0 +1,242 @@
+/* ===============================
+   MAIN PAGE CONTAINER
+   =============================== */
+
+.mainpage-main-cnt {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  /* padding: 20px 14px; */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  background:
+    radial-gradient(circle at top left, #ffd1d6, transparent 60%),
+    radial-gradient(circle at bottom right, #c7d2fe, transparent 60%),
+    linear-gradient(135deg, #e0e3e8, #d6dbff);
+}
+
+.mainpage-container {
+  width: 100%;
+  max-width: 1400px;
+  background: rgba(255, 255, 255, 0.96);
+  /* border-radius: 22px; */
+  padding: 24px 16px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ===============================
+   HERO / SECTION 1
+   =============================== */
+
+.section-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/* 🔥 LINE HEADING EFFECT (NEW COLLECTIONS) */
+.section-1 h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  font-size: clamp(24px, 5vw, 42px);
+  font-weight: 800;
+  color: #ff6b6b;
+  text-align: center;
+}
+
+.section-1 h1::before,
+.section-1 h1::after {
+  content: "";
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(to right, transparent, #9ca3af);
+}
+
+.section-1 h1::after {
+  background: linear-gradient(to left, transparent, #9ca3af);
+}
+
+/* SUB TEXT */
+.section-1 p {
+  color: #ff6b6b;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* OPTIONAL SUPPORT HEADINGS (IF USED ANYWHERE) */
+.section-1 h3 {
+  font-size: clamp(22px, 5vw, 40px);
+  font-weight: 800;
+  color: #111827;
+}
+
+.section-1 h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* IMAGE / CAROUSEL IMAGE */
+.section-1 .image-cnt .image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ===============================
+   SECTION 2 – PRODUCT AREA
+   =============================== */
+
+.section-2 {
+  margin-top: 30px;
+}
+
+/* ===============================
+   PRODUCT GRID (MOBILE FIRST)
+   =============================== */
+
+.product-cnt {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* ===============================
+   PRODUCT CARD
+   =============================== */
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  background:
+    radial-gradient(circle at top left, #ffd1d6, transparent 60%),
+    radial-gradient(circle at bottom right, #c7d2fe, transparent 60%),
+    linear-gradient(135deg, #e0e3e8, #d6dbff);
+
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
+}
+
+/* ===============================
+   PRODUCT IMAGE
+   =============================== */
+
+.product-header {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 14px 14px 0 0;
+}
+
+.product-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===============================
+   PRODUCT BODY
+   =============================== */
+
+.product-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.mini-desc {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.description {
+  font-size: 11px;
+  color: #4b5563;
+  margin-bottom: 6px;
+}
+
+.price {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ff6b6b;
+}
+
+.strikethrough {
+  font-size: 11px;
+  color: #9ca3af;
+  text-decoration: line-through;
+  margin-left: 4px;
+}
+
+.discount {
+  font-size: 11px;
+  color: #15803d;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* ===============================
+   LOADING & ERROR
+   =============================== */
+
+.loading {
+  text-align: center;
+  font-size: 16px;
+  color: #374151;
+}
+
+.main-error {
+  text-align: center;
+  font-size: 15px;
+  color: #dc2626;
+}
+
+/* ===============================
+   RESPONSIVE BREAKPOINTS
+   =============================== */
+
+/* Tablet */
+@media (min-width: 600px) {
+  .product-cnt {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .mainpage-container {
+    padding: 32px;
+  }
+}
+
+/* Small Laptop */
+@media (min-width: 900px) {
+  .section-1 {
+    grid-template-columns: 1.2fr 1fr;
+  }
+
+  .product-cnt {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+  .product-cnt {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

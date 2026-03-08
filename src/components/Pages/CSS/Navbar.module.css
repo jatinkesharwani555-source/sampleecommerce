@@ -1,0 +1,291 @@
+/* ===================== GLOBAL ===================== */
+body {
+  margin: 0;
+  padding-top: 75px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6fb;
+}
+
+/* ===================== NAVBAR ===================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  padding: 0 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: linear-gradient(135deg, #ff6b6b, #ff3d00, #ff8f8f);
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease infinite;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+/* Gradient Animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===================== LOGO ===================== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+}
+
+.logoText {
+  font-size: 20px;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.logo:hover .logoText {
+  transform: scale(1.05);
+}
+
+/* ===================== DESKTOP MENU ===================== */
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.menu li a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+.icon {
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+.menu li a:hover .icon {
+  transform: scale(1.2);
+}
+
+/* Active Link */
+.menu li a.active {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* ===================== MOBILE RIGHT SECTION ===================== */
+.mobileRightSection {
+  display: none;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Mobile Cart */
+.mobileCart {
+  font-size: 22px;
+  color: #fff;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.mobileCart:hover {
+  transform: scale(1.15);
+}
+
+/* ===================== MOBILE TOGGLE ===================== */
+.mobileIcon {
+  font-size: 26px;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.mobileIcon:hover {
+  transform: scale(1.1);
+}
+
+/* ===================== MOBILE MENU ===================== */
+.mobileMenu {
+  position: fixed;
+  top: 75px;
+  right: 0;
+
+  width: 50%;
+  height: calc(100vh - 75px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px 25px;
+
+  background: linear-gradient(160deg, #ff6b6b, #ff3d00);
+  box-shadow: -6px 0 20px rgba(0, 0, 0, 0.2);
+
+  animation: slideHalf 0.4s ease forwards;
+  z-index: 999;
+
+  /* ✅ SCROLL ENABLED */
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Scrollbar Styling */
+.mobileMenu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mobileMenu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mobileMenu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+
+.mobileMenu a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.mobileMenu a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(8px);
+}
+
+.mobileMenu span {
+  display: inline;
+}
+
+/* ===================== DESKTOP TOOLTIP ===================== */
+
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hide tooltip by default */
+.tooltip {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+/* Show on hover */
+.navItem:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* ===================== ANIMATION ===================== */
+@keyframes slideHalf {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+
+  .menu {
+    display: none;
+  }
+
+  .mobileRightSection {
+    display: flex;
+  }
+
+  .logoText {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .navbar {
+    height: 65px;
+    padding: 0 18px;
+  }
+
+  body {
+    padding-top: 65px;
+  }
+
+  .mobileMenu {
+    top: 65px;
+    height: calc(100vh - 65px);
+    width: 70%;
+  }
+
+  .logoText {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+
+  .mobileMenu {
+    width: 75%;
+  }
+
+  .logoText {
+    font-size: 13px;
+  }
+
+  .icon {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,169 @@
+.all-users-main-cnt {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px 15px;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  display: flex;
+  justify-content: center;
+}
+
+.all-users-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Loading / Error */
+.loading,
+.main-error,
+.nousers-quote {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.main-error {
+  color: #e11d48;
+}
+
+/* ========================= */
+/* USER CARD */
+/* ========================= */
+
+.list-ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 60px 1fr 1.5fr 1fr 80px;
+  align-items: center;
+  background: #ffffff;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease;
+  border-left: 5px solid #6366f1;
+}
+
+.list-ul:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.list-ul li {
+  font-size: 14px;
+  color: #334155;
+  word-break: break-word;
+}
+
+/* Text Styling */
+.sr-no {
+  font-weight: 600;
+  color: #6366f1;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #111827;
+}
+
+.user-email {
+  color: #475569;
+}
+
+.user-mobile {
+  color: #0f172a;
+}
+
+/* Image */
+.user-image {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #6366f1;
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media (max-width: 1024px) {
+  .list-ul {
+    grid-template-columns: 50px 1fr 1fr 1fr 70px;
+    padding: 15px;
+  }
+
+  .image {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .list-ul {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    text-align: left;
+    padding: 20px;
+  }
+
+  .sr-no {
+    font-size: 12px;
+  }
+
+  .user-name {
+    font-size: 16px;
+  }
+
+  .user-email,
+  .user-mobile {
+    font-size: 14px;
+  }
+
+  .user-image {
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+
+  .image {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+/* ========================= */
+/* SMALL DEVICES (320px) */
+/* ========================= */
+
+@media (max-width: 400px) {
+  .all-users-main-cnt {
+    padding: 20px 10px;
+  }
+
+  .list-ul {
+    padding: 15px;
+  }
+
+  .user-name {
+    font-size: 15px;
+  }
+
+  .user-email,
+  .user-mobile {
+    font-size: 13px;
+  }
+
+  .image {
+    width: 60px;
+    height: 60px;
+  }
+}

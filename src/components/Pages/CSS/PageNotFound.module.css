@@ -1,0 +1,54 @@
+.notFoundWrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa, #e4ecf7);
+}
+
+.card {
+  text-align: center;
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  max-width: 420px;
+  width: 90%;
+}
+
+.code {
+  font-size: 96px;
+  font-weight: 800;
+  color: #ff4d4f;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.desc {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.homeBtn {
+  display: inline-block;
+  padding: 12px 26px;
+  background: #1677ff;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.homeBtn:hover {
+  background: #0958d9;
+  transform: translateY(-2px);
+}

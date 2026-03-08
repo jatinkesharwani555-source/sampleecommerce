@@ -1,0 +1,13 @@
+Backend --
+forgot password flow
+backend validation using express-validator
+centralized error handling
+role-based access control
+service layer (clean architecture)
+
+Frontend --
+global state management
+form validation using formik or yup
+buttons, inputs, cards ko reusabel component banana
+loading dikhana
+error using react-toastify

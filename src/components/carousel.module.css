@@ -1,0 +1,72 @@
+.carousel {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Buttons */
+.left,
+.right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 22px;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.left {
+  left: 15px;
+}
+
+.right {
+  right: 15px;
+}
+
+.left:hover,
+.right:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.active {
+  background: #ff9f00;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .image {
+    height: 220px;
+  }
+}

@@ -1,0 +1,177 @@
+/* ===== PAGE CONTAINER ===== */
+
+.page-cnt {
+  min-height: 100vh;
+  padding: 30px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 25px;
+
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+}
+
+
+/* ===== HEADING ===== */
+
+.page-cnt h4 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #1e293b;
+  text-align: center;
+}
+
+
+/* ===== ERROR MESSAGE ===== */
+
+.page-cnt > p {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+
+/* ===== PRODUCT LINK CARD ===== */
+
+.page-cnt a {
+  text-decoration: none;
+  color: inherit;
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 15px;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.page-cnt a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+
+/* ===== PRODUCT IMAGE ===== */
+
+.page-cnt img {
+  width: 220px;
+  height: 220px;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+
+/* ===== PRODUCT INFO ===== */
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  text-align: center;
+}
+
+.product-info p {
+  font-size: 15px;
+  color: #334155;
+}
+
+.product-info strong {
+  color: #0f172a;
+}
+
+
+/* ===== BUTTONS ===== */
+
+.page-cnt button {
+  padding: 12px 26px;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+
+/* ===== CANCEL BUTTON ===== */
+
+.page-cnt button:first-of-type {
+  background: #cbd5f5;
+  color: #1e293b;
+}
+
+.page-cnt button:first-of-type:hover {
+  background: #94a3b8;
+  transform: translateY(-2px);
+}
+
+
+/* ===== DELETE BUTTON ===== */
+
+.page-cnt button:last-of-type {
+  background: #ef4444;
+  color: white;
+}
+
+.page-cnt button:last-of-type:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+
+/* ===== DISABLED BUTTON ===== */
+
+.page-cnt button:disabled {
+  background: #fca5a5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 600px) {
+
+  .page-cnt h4 {
+    font-size: 20px;
+  }
+
+  .page-cnt img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .page-cnt a {
+    width: 90%;
+    padding: 16px;
+  }
+
+  .page-cnt button {
+    width: 100%;
+    max-width: 260px;
+  }
+
+}

@@ -1,0 +1,37 @@
+/* Wrapper to center the spinner and text */
+.spinnerWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px; /* adjust as needed */
+  gap: 12px;
+}
+
+/* Spinner animation */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #f3f3f3;       /* Light gray */
+  border-top: 6px solid #ff6b6b;   /* Accent color */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Spinner Text */
+.spinnerText {
+  font-size: 16px;
+  color: #374151;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Keyframes for spinning */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

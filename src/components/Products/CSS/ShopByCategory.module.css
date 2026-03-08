@@ -1,0 +1,91 @@
+.page-cnt {
+  width: 100%;
+  padding: 0px 10px 20px 10px;
+  text-align: center;
+}
+
+/* ===============================
+   HEADING
+   =============================== */
+
+.page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 35px;
+
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  color: #ff6b6b;
+}
+
+.page-heading::before,
+.page-heading::after {
+  content: "";
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(to right, transparent, #9ca3af);
+}
+
+.page-heading::after {
+  background: linear-gradient(to left, transparent, #9ca3af);
+}
+
+/* ===============================
+   SINGLE ROW PRODUCT STRIP
+   =============================== */
+
+.carouselList {
+  display: flex;
+  overflow-x: auto;
+  gap: 18px;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+
+.carouselList::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===============================
+   PRODUCT CARD
+   =============================== */
+
+.carouselItem {
+  flex: 0 0 auto;
+  width: clamp(110px, 14vw, 160px); /* auto responsive width */
+  border-radius: 16px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.carouselItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+/* ===============================
+   PRODUCT IMAGE (AUTO SMALL)
+   =============================== */
+
+.carouselImage {
+  width: 100%;
+  height: clamp(90px, 12vw, 140px); /* image responsive */
+  object-fit: cover;
+}
+
+/* ===============================
+   PRODUCT TEXT
+   =============================== */
+
+.carouselText {
+  padding: 8px;
+  font-size: clamp(12px, 1vw, 14px);
+  font-weight: 600;
+  color: #111827;
+}

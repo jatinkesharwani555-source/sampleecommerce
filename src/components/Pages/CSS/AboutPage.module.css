@@ -1,0 +1,289 @@
+/* ===== MAIN CONTAINER ===== */
+.aboutpage-main-cnt {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 20px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  background:
+    radial-gradient(circle at top left, #ffd1d6, transparent 60%),
+    radial-gradient(circle at bottom right, #c7d2fe, transparent 60%),
+    linear-gradient(135deg, #e0e3e8, #d6dbff);
+
+  transition: .3s ease;
+}
+
+/* ===== INNER CARD ===== */
+.aboutpage-container {
+  max-width: 1100px;
+  width: 100%;
+  background: rgba(255, 255, 255, .96);
+  border-radius: 22px;
+  padding: 35px 40px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, .12);
+}
+
+
+/* ===== HEADING ===== */
+.aboutpage-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 700;
+  color: #ff6b6b;
+}
+
+.aboutpage-heading::before,
+.aboutpage-heading::after {
+  content: "";
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(to right, transparent, #9ca3af);
+}
+
+.aboutpage-heading::after {
+  background: linear-gradient(to left, transparent, #9ca3af);
+}
+
+
+/* ===== FIRST SECTION ===== */
+.first-section {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.image-cnt {
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+}
+
+.description-cnt {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.description {
+  color: #374151;
+  line-height: 1.7;
+}
+
+.desc-heading {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 650;
+}
+
+
+/* ===== SECOND SECTION ===== */
+.second-section {
+  margin-top: 40px;
+}
+
+.second-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 700;
+  color: #ff6b6b;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.second-section-heading::after {
+  content: "";
+  width: 110px;
+  height: 2px;
+  background: #9ca3af;
+  border-radius: 2px;
+}
+
+.second-section-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.mini-cnt {
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+  flex: 1;
+  min-width: 250px;
+}
+
+.mini-heading {
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.mini-para {
+  color: #4b5563;
+}
+
+
+
+/* =========================
+   RESPONSIVE BREAKPOINTS
+   ========================= */
+
+
+/* 1200px ↓ (Large laptops) */
+@media (max-width: 1200px) {
+  .aboutpage-container {
+    max-width: 95%;
+  }
+}
+
+
+/* 950px ↓ (Tablets Landscape) */
+@media (max-width: 950px) {
+  .first-section {
+    grid-template-columns: 1fr;
+  }
+
+  .image {
+    height: 400px;
+  }
+
+  .second-section-cards {
+    justify-content: center;
+  }
+}
+
+
+/* 768px ↓ (Tablets Portrait) */
+@media (max-width: 768px) {
+
+  .aboutpage-container {
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+
+  .image {
+    height: 350px;
+  }
+
+  .mini-cnt {
+    min-width: 100%;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .mini-para {
+    font-size: 14px;
+  }
+  .desc-heading{
+    font-size: 18px;
+    font-weight: 650;
+  }
+
+}
+
+
+/* 600px ↓ (Large mobile) */
+@media (max-width: 600px) {
+
+  .aboutpage-heading {
+    gap: 8px;
+  }
+
+  .image {
+    height: 300px;
+  }
+
+  .second-section-heading::after {
+    width: 80px;
+  }
+
+}
+
+
+/* 480px ↓ (Small mobile) */
+@media (max-width: 480px) {
+
+  .aboutpage-container {
+    padding: 18px 14px;
+    border-radius: 14px;
+  }
+
+  .image {
+    height: 250px;
+  }
+
+  .aboutpage-heading {
+    font-size: 22px;
+  }
+
+  .second-section-heading {
+    font-size: 20px;
+  }
+
+  .mini-heading {
+    font-size: 14px;
+  }
+
+  .description {
+    font-size: 10px;
+  }
+
+  .mini-para {
+    font-size: 10px;
+  }
+
+  .desc-heading {
+    font-size: 14px;
+    font-weight: 650;
+  }
+}
+
+
+/* 360px ↓ (Very small phones) */
+@media (max-width: 360px) {
+
+  .aboutpage-heading {
+    font-size: 20px;
+  }
+
+  .image {
+    height: 190px;
+  }
+
+  .mini-cnt {
+    padding: 14px;
+  }
+
+  .mini-heading {
+    font-size: 14px;
+  }
+
+  .description {
+    font-size: 10px;
+  }
+
+  .mini-para {
+    font-size: 10px;
+  }
+
+  .desc-heading {
+    font-size: 14px;
+    font-weight: 650;
+  }
+}

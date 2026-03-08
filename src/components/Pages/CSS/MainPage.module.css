@@ -1,0 +1,105 @@
+/* ===== MAIN WRAPPER ===== */
+.mainpage-main-cnt {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(circle at top left, rgba(102, 126, 234, 0.25), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(118, 75, 162, 0.25), transparent 60%),
+    linear-gradient(135deg, #8fa3f0, #a88bd8);
+  padding: 30px;
+}
+
+/* ===== CARD ===== */
+.mainpage-container {
+  padding: 55px 65px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+  animation: fadeUp 0.8s ease;
+}
+
+/* ===== TEXT ===== */
+.dear-user-quote {
+  font-size: 42px;
+  color: #ff6b6b;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.welcome-quote {
+  font-size: 26px;
+  color: #2f2f2f;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.signup-login-quote {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 34px;
+}
+
+/* ===== BUTTON CONTAINER ===== */
+.signup-login-btn {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  background: none;
+}
+
+/* ===== COMMON BUTTON ===== */
+.btn {
+  min-width: 150px;
+  padding: 14px 36px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== SIGNUP BUTTON ===== */
+.signup-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ff8f8f);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(255, 107, 107, 0.45);
+}
+
+.signup-btn:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 16px 36px rgba(255, 107, 107, 0.6);
+}
+
+/* ===== LOGIN BUTTON ===== */
+.login-btn {
+  background: linear-gradient(135deg, #ffffff, #ffecec);
+  color: #ff6b6b;
+  border: 2px solid rgba(255, 107, 107, 0.8);
+  box-shadow: 0 8px 18px rgba(255, 107, 107, 0.3);
+}
+
+.login-btn:hover {
+  transform: translateY(-4px) scale(1.04);
+  background: linear-gradient(135deg, #ffe6e6, #ffffff);
+  box-shadow: 0 14px 30px rgba(255, 107, 107, 0.4);
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

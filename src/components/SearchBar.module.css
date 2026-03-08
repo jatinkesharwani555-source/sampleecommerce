@@ -1,0 +1,190 @@
+/* ================= WRAPPER ================= */
+
+.searchWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= SEARCH FORM ================= */
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 30px;
+  padding: 3px 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.searchForm:focus-within {
+  box-shadow: 0 6px 16px rgba(255, 76, 76, 0.25);
+  transform: translateY(-1px);
+}
+
+/* ================= INPUT ================= */
+
+.searchInput {
+  border: none;
+  outline: none;
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 25px;
+  width: 170px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.searchInput::placeholder {
+  color: #999;
+}
+
+/* ================= BUTTON ================= */
+
+.searchButton {
+  background: linear-gradient(135deg, #ff6b6b, #ff3d00);
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.searchButton:hover {
+  transform: scale(1.08);
+}
+
+/* ================= SUGGESTIONS DROPDOWN ================= */
+
+.suggestions {
+  position: absolute;
+  top: 115%;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 6px 0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  max-height: 260px;
+  overflow-y: auto;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+/* Scrollbar Styling */
+.suggestions::-webkit-scrollbar {
+  width: 5px;
+}
+
+.suggestions::-webkit-scrollbar-thumb {
+  background: #ff6b6b;
+  border-radius: 10px;
+}
+
+/* ================= SUGGESTION ITEM ================= */
+
+.suggestionItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.suggestionItem:hover {
+  background: #fff3f3;
+}
+
+/* Product Image */
+.suggestionItem img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Product Name */
+.suggestionItem span {
+  font-size: 13px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .searchInput {
+    width: 120px;
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  .searchButton {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .searchForm {
+    padding: 2px 5px;
+  }
+
+  .searchInput {
+    width: 70px;
+    font-size: 11px;
+    padding: 4px 6px;
+  }
+
+  .searchInput:focus {
+    width: 110px;
+  }
+
+  .searchButton {
+    width: 24px;
+    height: 24px;
+  }
+
+  .suggestions {
+    border-radius: 12px;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 360px) {
+  .searchInput {
+    width: 55px;
+    font-size: 10px;
+  }
+
+  .searchInput:focus {
+    width: 90px;
+  }
+
+  .searchButton {
+    width: 22px;
+    height: 22px;
+  }
+}
