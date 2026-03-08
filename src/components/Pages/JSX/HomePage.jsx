@@ -4,7 +4,7 @@ import ContactPage from './ContactPage.jsx';
 import Carousell from '../../Carousell.jsx';
 import BestSellerProducts from '../../Products/JSX/BestSellerProducts.jsx';
 import AllProductList from '../../Products/JSX/AllProductList.jsx';
-import { homeSlides } from '../../../constants/homeSlides.jsx';
+import { homeSlides } from '../../../constants/homeSlides.js';
 import ShopByCategory from '../../Products/JSX/ShopByCategory.jsx';
 
 const HomePage = () => {
