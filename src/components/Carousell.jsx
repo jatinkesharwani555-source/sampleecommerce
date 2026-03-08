@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./Carousel.module.css";
+import styles from "./Carousell.module.css";
 
 const Carousell = ({ slides, autoPlay = true, delay = 3000 }) => {
   const [current, setCurrent] = useState(0);
