@@ -1,7 +1,7 @@
 import styles from '../CSS/HomePage.module.css';
 import HomePageOptions from './HomePageOptions.jsx';
 import ContactPage from './ContactPage.jsx';
-import Carousel from '../../Carousel.jsx';
+import Carousell from '../../Carousell.jsx';
 import BestSellerProducts from '../../Products/JSX/BestSellerProducts.jsx';
 import AllProductList from '../../Products/JSX/AllProductList.jsx';
 import { homeSlides } from '../../../constants/homeSlides.jsx';
@@ -14,7 +14,7 @@ const HomePage = () => {
         <div className={styles['mainpage-container']}>
           <div className={styles['section-1']}>
             <h1>Welcome To Kesharwani Mart</h1>
-            <Carousel slides={homeSlides} />
+            <Carousell slides={homeSlides} />
           </div>
           <BestSellerProducts />
           <ShopByCategory slides={homeSlides} />

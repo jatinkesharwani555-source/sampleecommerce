@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Carousel.module.css";
 
-const Carousel = ({ slides, autoPlay = true, delay = 3000 }) => {
+const Carousell = ({ slides, autoPlay = true, delay = 3000 }) => {
   const [current, setCurrent] = useState(0);
   const navigate = useNavigate();
 
@@ -49,4 +49,4 @@ const Carousel = ({ slides, autoPlay = true, delay = 3000 }) => {
   );
 };
 
-export default Carousel;
+export default Carousell;
