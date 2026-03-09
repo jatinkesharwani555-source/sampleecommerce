@@ -38,7 +38,7 @@ const DeleteProduct = () => {
 
       {product && (
         <Link to={`/product/${product._id}`}>
-          <img src={`http://localhost:3000/uploads/${product?.productImage?.[0]}`} alt="Product Image" />
+          <img src={`https://sampleecommercebackend-2.onrender.com/uploads/${product?.productImage?.[0]}`} alt="Product Image" />
           <div className={styles["product-info"]}>
             <p><strong>Name:</strong> {product.productMiniDesc}</p>
             <p><strong>Price:</strong> ₹{product.productPrice}</p>

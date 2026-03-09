@@ -1,21 +1,21 @@
 export const homeSlides = [
   {
-    image: "http://localhost:3000/uploads/image1.jpg",
+    image: "https://sampleecommercebackend-2.onrender.com/uploads/image1.jpg",
     category: "Category1",
     link: "/product-list"
   },
   {
-    image: "http://localhost:3000/uploads/image2.jpg",
+    image: "https://sampleecommercebackend-2.onrender.com/uploads/image2.jpg",
     category: "Category2",
     link: "/product-list"
   },
   {
-    image: "http://localhost:3000/uploads/image3.jpg",
+    image: "https://sampleecommercebackend-2.onrender.com/uploads/image3.jpg",
     category: "Category3",
     link: "/product-list"
   },
   {
-    image: "http://localhost:3000/uploads/image4.jpg",
+    image: "https://sampleecommercebackend-2.onrender.com/uploads/image4.jpg",
     category: "Category4",
     link: "/product-list"
   }

@@ -60,7 +60,7 @@ const ForgotPassword = () => {
     if (!validate1()) return;
     setError({});
     try {
-      const response = await axios.post("http://localhost:3000/api/forgot-password", {
+      const response = await axios.post("https://sampleecommercebackend-2.onrender.com/api/forgot-password", {
         email: emailFromForm
       });
 
@@ -81,7 +81,7 @@ const ForgotPassword = () => {
     setError({});
     if (!validate2()) return;
     try {
-      const response = await axios.post("http://localhost:3000/api/change-password-without-login", {
+      const response = await axios.post("https://sampleecommercebackend-2.onrender.com/api/change-password-without-login", {
         email: emailFromForm,
         oldPassword: oldPassword,
         newPassword: newPassword

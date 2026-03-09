@@ -42,7 +42,7 @@ const AllUsers = () => {
               <li className={styles['user-email']}>{user.userEmail}</li>
               <li className={styles['user-mobile']}>{user.userMobileNo}</li>
               <li className={styles['user-image']}>
-                <img className={styles['image']} src={`http://localhost:3000/uploads/${user.userImage}`} alt='Image' />
+                <img className={styles['image']} src={`https://sampleecommercebackend-2.onrender.com/uploads/${user.userImage}`} alt='Image' />
               </li>
             </ul>
           ))}

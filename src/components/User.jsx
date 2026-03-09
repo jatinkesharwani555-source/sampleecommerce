@@ -27,7 +27,7 @@ const User = () => {
   // FetchingData Function 
   const fetchingData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/read-client");
+        const response = await fetch("https://sampleecommercebackend-2.onrender.com/api/read-client");
         const data = await response.json();
         setUserData(data.allUser);
         console.log("Your Table Data: ", data.allUser);
@@ -48,7 +48,7 @@ const User = () => {
 
     const sendingData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/create-client", {
+        const response = await fetch("https://sampleecommercebackend-2.onrender.com/api/create-client", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(createUserDetails)

@@ -37,7 +37,7 @@ const Profile = () => {
         <div className={styles.imageSection}>
           {presentUser.userImage ? (
             <img
-              src={`http://localhost:3000/uploads/${presentUser.userImage}`}
+              src={`https://sampleecommercebackend-2.onrender.com/uploads/${presentUser.userImage}`}
               alt="Profile"
               className={styles.profileImage}
             />

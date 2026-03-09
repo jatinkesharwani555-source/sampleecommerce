@@ -11,6 +11,7 @@ import ManageProducts from './components/Admin/ManageProducts';
 import EditProduct from './components/Admin/EditProduct';
 import DeleteProduct from './components/Admin/DeleteProduct';
 import ImagePreview from './components/Products/JSX/ProductImagePreview';
+import { authCheck } from './api/authCheck';
 
 // Lazy load big components
 const SignUp = lazy(() => import('./components/Login&Logout/JSX/SignUp'));
@@ -51,7 +52,7 @@ function App() {
   // ===== Check auth status =====
   const checkAuth = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/auth-check", { withCredentials: true });
+      const response = await authCheck();
       if (response.data.success) {
         setIsLoggedIn(true);
         setRole(response.data.role);

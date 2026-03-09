@@ -48,7 +48,7 @@ const DetailedProduct = ({ loggedIn, role }) => {
                   className={styles["single-img-cnt"]}
                   onClick={() => setSelectedImage(img)}
                 >
-                  <img src={`http://localhost:3000/uploads/${img}`} alt="" />
+                  <img src={`https://sampleecommercebackend-2.onrender.com/uploads/${img}`} alt="" />
                 </div>
               ))}
             </div>
@@ -56,7 +56,7 @@ const DetailedProduct = ({ loggedIn, role }) => {
             <div className={styles["img-cnt"]}>
               <Link to={`/product/image-preview/${product._id}/${selectedImage}`}>
                 <img
-                  src={`http://localhost:3000/uploads/${selectedImage}`}
+                  src={`https://sampleecommercebackend-2.onrender.com/uploads/${selectedImage}`}
                   className={styles.image}
                   alt=""
                 />

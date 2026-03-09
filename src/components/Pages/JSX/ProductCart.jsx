@@ -37,7 +37,7 @@ const ProductCart = () => {
                 <Link to={`/product/${item.productId._id}`}>
                   <div className={style["part1-image"]}>
                     <img
-                      src={`http://localhost:3000/uploads/${item.productId.productImage?.[0]}`}
+                      src={`https://sampleecommercebackend-2.onrender.com/uploads/${item.productId.productImage?.[0]}`}
                       alt={item.productId.productMiniDesc}
                       className={style["product-img"]}
                     />
