@@ -67,7 +67,6 @@ function App() {
 
   useEffect(() => {
     checkAuth();
-    setTimeout(() => setLoading(false), 3000);
   }, []);
 
   // ===== Routes =====
