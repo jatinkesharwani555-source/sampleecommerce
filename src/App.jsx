@@ -52,7 +52,7 @@ function App() {
   // ===== Check auth status =====
   const checkAuth = async () => {
     try {
-      const response = await authCheck();
+      const response = await axios.get("https://sampleecommercebackend-2.onrender.com/api/auth-check", {withCredentials: true});
       if (response.data.success) {
         setIsLoggedIn(true);
         setRole(response.data.role);
