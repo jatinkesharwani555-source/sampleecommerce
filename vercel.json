@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/((?!api|uploads|assets|.*\\..*).*)",
-      "destination": "/"
-    }
-  ]
-}
