@@ -3,7 +3,7 @@ import styles from "./Profile.module.css";
 import { Link } from "react-router-dom";
 import { getPresentUserApi } from "../../api/profile.api";
 import { FaUserEdit, FaTrash, FaSignOutAlt } from "react-icons/fa";
-
+import LoadingSpinner from '../LoadingSpinner';
 const Profile = () => {
   const [presentUser, setPresentUser] = useState({});
   const [loading, setLoading] = useState(false);
@@ -26,7 +26,7 @@ const Profile = () => {
     fetchPresentUser();
   }, []);
 
-  if (loading) return <p className={styles.loading}>Loading...</p>;
+  if (loading) return <LoadingSpinner />
   if (serverError) return <p className={styles["main-error"]}>{serverError}</p>;
 
   return (
