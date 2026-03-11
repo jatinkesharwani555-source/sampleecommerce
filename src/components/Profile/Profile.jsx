@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { getPresentUserApi } from "../../api/profile.api";
 import { FaUserEdit, FaTrash, FaSignOutAlt } from "react-icons/fa";
 import LoadingSpinner from '../LoadingSpinner';
+
 const Profile = () => {
   const [presentUser, setPresentUser] = useState({});
   const [loading, setLoading] = useState(false);
@@ -32,18 +33,15 @@ const Profile = () => {
   return (
     <div className={styles.profileMain}>
       <div className={styles.profileCard}>
-        
+
         {/* Profile Image */}
         <div className={styles.imageSection}>
-          {presentUser.userImage ? (
-            <img
-              src={presentUser.userImage}
-              alt="Profile"
-              className={styles.profileImage}
-            />
-          ) : (
-            <div className={styles.defaultAvatar}>👤</div>
-          )}
+          <img
+            src={presentUser.userImage || "./default.jpg"}
+            alt="Profile"
+            className={styles.profileImage}
+            onError={(e) => (e.target.src = "/default.jpg")}
+          />
         </div>
 
         {/* User Info */}
