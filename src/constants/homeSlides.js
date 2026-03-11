@@ -1,6 +1,6 @@
 export const homeSlides = [
   {
-    image: "https://sampleecommercebackend-2.onrender.com/uploads/image1.jpg",
+    image: "../../../public/image1.jpg",
     category: "Category1",
     link: "/product-list"
   },
