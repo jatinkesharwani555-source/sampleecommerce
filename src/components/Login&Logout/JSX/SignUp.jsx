@@ -36,7 +36,7 @@ const SignUp = () => {
 
   // HandleChange Function For File 
   const handleFileChange = (e) => {
-    setFiles([...e.target.files]);
+    setImage([...e.target.files]);
   }
 
   // HandleSubmit Function 
@@ -47,14 +47,13 @@ const SignUp = () => {
     try {
       setLoading(true);
       const formData = new FormData();
-
       formData.append("userName", createdUserData.userName);
       formData.append("userEmail", createdUserData.userEmail);
       formData.append("userMobileNo", createdUserData.userMobileNo);
       formData.append("userPassword", createdUserData.userPassword);
 
-      if (files.length > 0) {
-        formData.append("userImage", files[0]);
+      if (image.length > 0) {
+        formData.append("userImage", image[0]);
       }
 
       const response = await submitSignupForm(formData);
