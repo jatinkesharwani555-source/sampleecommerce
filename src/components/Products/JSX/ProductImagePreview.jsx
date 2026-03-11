@@ -12,13 +12,15 @@ const ProductImagePreview = () => {
   const fetchProduct = async () => {
     const { data } = await getProductById(id);
     const imgs = data.data.productImage;
+    const decodedImage = decodeURIComponent(image);
     setImages(imgs);
-    setIndex(imgs.findIndex((img) => img === image));
+    const idx = imgs.findIndex((img) => img === decodedImage);
+    setIndex(idx >= 0 ? idx : 0);
   };
 
   useEffect(() => {
     fetchProduct();
-  }, []);
+  }, [id, image]);
 
   const nextImage = () => {
     setIndex((prev) => (prev + 1) % images.length);
