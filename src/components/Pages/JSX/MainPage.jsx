@@ -1,6 +1,7 @@
 // No Use -- Faltu hai 
 import { Link } from 'react-router-dom';
 import styles from "../CSS/MainPage.module.css";
+import { useEffect } from 'react';
 
 const MainPage = () => {
   // For SEO 

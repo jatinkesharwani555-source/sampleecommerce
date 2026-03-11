@@ -3,6 +3,7 @@ import style from "../CSS/ProductCart.module.css";
 import useCart from "../../../hooks/useCart.js";
 import { SHIPPING_FEE } from "../../../constants/cart.constants";
 import LoadingSpinner from "../../LoadingSpinner.jsx";
+import { useEffect } from "react";
 
 const ProductCart = () => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const ProductCart = () => {
     error,
     loading,
   } = useCart(navigate);
-  
+
   // For SEO 
   useEffect(() => {
     document.title = "Cart | Kesharwani Mart";

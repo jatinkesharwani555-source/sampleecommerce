@@ -6,6 +6,7 @@ import BestSellerProducts from '../../Products/JSX/BestSellerProducts.jsx';
 import AllProductList from '../../Products/JSX/AllProductList.jsx';
 import { homeSlides } from '../../../constants/homeSlides.js';
 import ShopByCategory from '../../Products/JSX/ShopByCategory.jsx';
+import { useEffect } from 'react';
 
 const HomePage = () => {
   // For SEO 
