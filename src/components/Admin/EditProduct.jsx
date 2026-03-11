@@ -3,12 +3,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import styles from './CreateProduct.module.css';
 import { productEditValidation } from '../../utils/productEdit.utils';
 import LoadingSpinner from '../LoadingSpinner';
-import {updateProductApi} from '../../api/updateProduct.api';
+import { updateProductApi } from '../../api/updateProduct.api';
 import useProduct from '../../hooks/useProduct';
 
 const EditProduct = () => {
   const navigate = useNavigate();
-  const {id} = useParams();
+  const { id } = useParams();
 
   const [files, setFiles] = useState([]);
   const [serverError, setServerError] = useState(null);
@@ -29,7 +29,7 @@ const EditProduct = () => {
   }
 
   // Fetch Product 
-const {product, loading, error, setProduct} = useProduct(id);
+  const { product, loading, error, setProduct } = useProduct(id);
 
   // HandleSubmit Function 
   const handleSubmit = async (e) => {
@@ -45,9 +45,11 @@ const {product, loading, error, setProduct} = useProduct(id);
       formData.append("discount", Number(product.productDiscount));
       formData.append("category", product.productCategory);
       formData.append("sellerType", product.sellerType);
-      files.forEach(file => {
-        formData.append("productImage", file);
-      });
+      if (files.length > 0) {
+        files.forEach(file => {
+          formData.append("productImage", file);
+        });
+      }
 
       const response = await updateProductApi(id, formData);
 
@@ -64,7 +66,7 @@ const {product, loading, error, setProduct} = useProduct(id);
     }
   };
 
-if(loading) return <LoadingSpinner />;
+  if (loading) return <LoadingSpinner />;
 
   return (
     <>
