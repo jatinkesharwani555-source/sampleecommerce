@@ -54,7 +54,7 @@ const DetailedProduct = ({ loggedIn, role }) => {
             </div>
 
             <div className={styles["img-cnt"]}>
-              <Link to={`/product/image-preview/${product._id}/${selectedImage}`}>
+              <Link to={`/product/image-preview/${product._id}/${encodeURIComponent(selectedImage)}`}>
                 <img
                   src={selectedImage}
                   className={styles.image}
