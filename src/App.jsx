@@ -12,6 +12,7 @@ import EditProduct from './components/Admin/EditProduct';
 import DeleteProduct from './components/Admin/DeleteProduct';
 import ImagePreview from './components/Products/JSX/ProductImagePreview';
 import { authCheck } from './api/authCheck';
+import ProductImagePreview from './components/Products/JSX/ProductImagePreview';
 
 // Lazy load big components
 const SignUp = lazy(() => import('./components/Login&Logout/JSX/SignUp'));
@@ -278,7 +279,7 @@ function App() {
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
           <Suspense fallback={<LoadingSpinner text='Loading Image'/>}>
-            <ImagePreview />
+            <ProductImagePreview />
           </Suspense>
         </Layout>
       ),

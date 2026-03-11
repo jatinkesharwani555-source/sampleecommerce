@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getProductById } from "../../../api/productApi";
 
-const ImagePreview = () => {
+const ProductImagePreview = () => {
   const { id, image } = useParams();
   const navigate = useNavigate();
 
@@ -106,4 +106,4 @@ const rightBtn = {
   cursor: "pointer",
 };
 
-export default ImagePreview;
+export default ProductImagePreview;
