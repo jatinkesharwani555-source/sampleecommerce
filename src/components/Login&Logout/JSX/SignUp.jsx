@@ -15,6 +15,7 @@ const SignUp = () => {
     userMobileNo: "",
     userPassword: ""
   });
+  const [image, setImage] = useState([]);
   // Error State 
   const [error, setError] = useState({});
   const [serverError, setServerError] = useState(null);
@@ -33,6 +34,11 @@ const SignUp = () => {
     });
   };
 
+  // HandleChange Function For File 
+  const handleFileChange = (e) => {
+    setFiles([...e.target.files]);
+  }
+
   // HandleSubmit Function 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,7 +46,18 @@ const SignUp = () => {
     if (!userValidation(createdUserData, setError)) return;
     try {
       setLoading(true);
-      const response = await submitSignupForm(createdUserData);
+      const formData = new FormData();
+
+      formData.append("userName", createdUserData.userName);
+      formData.append("userEmail", createdUserData.userEmail);
+      formData.append("userMobileNo", createdUserData.userMobileNo);
+      formData.append("userPassword", createdUserData.userPassword);
+
+      if (files.length > 0) {
+        formData.append("userImage", files[0]);
+      }
+
+      const response = await submitSignupForm(formData);
 
       // Check If Email Is Already Registered 
       if (!response.data.success) {
@@ -86,7 +103,7 @@ const SignUp = () => {
           <h1 className={styles['dear-user-quote']}>Hey, Dear User</h1>
           <h4 className={styles['signup-quote']}>Please SignUp</h4>
           {serverError && <p className={styles['error-message']}>{serverError}</p>}
-          <form className={styles['signup-page-form']} onSubmit={handleSubmit}>
+          <form className={styles['signup-page-form']} onSubmit={handleSubmit} encType='multipart/form-data'>
             <div className={styles['input-wrapper']}>
               <label className={styles['label']} htmlFor="userName">User Name : </label>
               <input type="text" name='userName' placeholder='Enter Your UserName Here...' className={`${styles['form-input']} ${styles['form-username']}`} value={createdUserData.userName} onChange={handleChange} />
@@ -116,7 +133,7 @@ const SignUp = () => {
 
             <div className={styles['input-wrapper']}>
               <label className={styles['label']} htmlFor="userImage">Image: </label>
-              <input type="file" name='userImage' />
+              <input type="file" name='userImage' onChange={handleFileChange} />
             </div>
             <button className={styles['form-submit-btn']} disabled={loading}>{loading ? "Submitting" : "Submit"}</button>
           </form>
