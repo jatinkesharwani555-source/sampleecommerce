@@ -36,7 +36,7 @@ const ProfileEdit = () => {
 
   // HandleChange Function For File 
   const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
+    setFile(e.target.files);
   }
 
   // Fetch User From Backend 
@@ -73,7 +73,7 @@ const ProfileEdit = () => {
       formData.append("email", user.userEmail);
       formData.append("mobile", user.userMobileNo);
       formData.append("password", user.userPassword);
-      if (file) formData.append("profileImage", file);
+      if (file && file.length > 0) formData.append("profileImage", file[0]);
 
       const response = await submitProfileEditFormApi(formData);
 
@@ -131,7 +131,7 @@ const ProfileEdit = () => {
               <label className={styles['label']} htmlFor="userImage">Image: </label>
               <input type="file" name='profileImage' onChange={handleFileChange} />
             </div>
-            <button className={styles['form-submit-btn']}>Submit</button>
+            <button className={styles['form-submit-btn']} disabled={loading}>{loading ? "Updating..." : "Submit"}</button>
           </form>
           <div className={styles['login-button']}>
             <p className={styles['login-quote']}>Click To Change Password : </p>
