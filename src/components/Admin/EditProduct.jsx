@@ -58,7 +58,7 @@ const {product, loading, error, setProduct} = useProduct(id);
       navigate("/admin/manage-products");
 
     } catch (err) {
-      setServerError(err.response?.data?.message || "Something Went Wrong");
+      setServerError(err.response?.data?.message || "Something Went Wrong In Server");
     } finally {
       setSubmitLoading(false);
     }
