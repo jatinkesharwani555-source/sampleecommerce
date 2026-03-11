@@ -8,6 +8,11 @@ import { homeSlides } from '../../../constants/homeSlides.js';
 import ShopByCategory from '../../Products/JSX/ShopByCategory.jsx';
 
 const HomePage = () => {
+  // For SEO 
+  useEffect(() => {
+    document.title = "Home Page | Kesharwani Mart";
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   return (
     <>
       <div className={styles['mainpage-main-cnt']} id='home'>

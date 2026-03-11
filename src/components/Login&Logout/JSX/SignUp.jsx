@@ -73,6 +73,12 @@ const SignUp = () => {
     }
   };
 
+  // For SEO 
+  useEffect(() => {
+    document.title = "Sign Up | Kesharwani Mart";
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   return (
     <>
       <div className={styles['signup-main-cnt']}>

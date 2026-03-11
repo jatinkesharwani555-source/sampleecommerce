@@ -45,7 +45,7 @@ const Login = (props) => {
       const response = await submitLoginForm(userFromForm);
 
       if (!response.data.success) {
-        setServerError( response.data.message || "SUCCESS FALSE");
+        setServerError(response.data.message || "SUCCESS FALSE");
         return;
       }
       // Login Success 
@@ -60,6 +60,12 @@ const Login = (props) => {
       setLoading(false);
     }
   };
+
+  // For SEO 
+  useEffect(() => {
+    document.title = "Login | Kesharwani Mart";
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   return (
     <>

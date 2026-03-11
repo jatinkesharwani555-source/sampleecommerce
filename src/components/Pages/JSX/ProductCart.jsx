@@ -17,6 +17,12 @@ const ProductCart = () => {
     error,
     loading,
   } = useCart(navigate);
+  
+  // For SEO 
+  useEffect(() => {
+    document.title = "Cart | Kesharwani Mart";
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   if (loading) return <LoadingSpinner text="Loading Cart Items" />;
   if (error) return <p className={style["main-error"]}>{error}</p>;
