@@ -11,7 +11,7 @@ const ProductList = ({ products, heading, loggedIn, role, showAdminActions = fal
             <div className={styles['product-card']} key={product._id}>
               <Link className={styles['product-cnt-link']} to={`/product/${product._id}`}>
                 <div className={styles['product-header']}>
-                  <img className={styles['image']} src={`https://sampleecommercebackend-2.onrender.com/uploads/${product.productImage[0]}`} alt="Product Image" />
+                  <img className={styles['image']} src={product.productImage[0]} alt="Product Image" />
                 </div>
                 <div className={styles['product-body']}>
                   <p className={styles['mini-desc']}>{product.productMiniDesc}</p>

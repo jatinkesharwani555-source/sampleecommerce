@@ -68,7 +68,7 @@ const SearchBar = ({ onSearch }) => {
               onClick={() => handleSelect(item.productMiniDesc)}
             >
               <img
-                src={`https://sampleecommercebackend-2.onrender.com/uploads/${item.productImage?.[0]}`}
+                src={item.productImage?.[0]}
                 alt={item.productMiniDesc}
               />              
               <span>{item.productMiniDesc}</span>

@@ -41,7 +41,7 @@ const ImagePreview = () => {
 
       {images.length > 0 && (
         <img
-          src={`https://sampleecommercebackend-2.onrender.com/uploads/${images[index]}`}
+          src={images[index]}
           style={imageStyle}
           alt=""
         />
