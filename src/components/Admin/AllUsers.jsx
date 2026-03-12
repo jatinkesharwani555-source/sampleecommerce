@@ -32,9 +32,9 @@ const AllUsers = () => {
     <div className={styles['all-users-main-cnt']}>
       <div className={styles['all-users-container']}>
 
-        {allUsers.length === 0 && <p className={styles['nousers-quote']}>No Users Found</p>}
+        {allUsers?.length === 0 && <p className={styles['nousers-quote']}>No Users Found</p>}
 
-        {allUsers.length > 0 &&
+        {allUsers?.length > 0 &&
           allUsers.map((user, index) => (
             <ul className={styles['list-ul']} key={user._id}>
               <li className={styles['sr-no']}>{index + 1}</li>
