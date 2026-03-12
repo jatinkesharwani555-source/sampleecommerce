@@ -56,7 +56,7 @@ const ProductCart = () => {
                   <p className={style['discounted-product-price']}>₹{item.productId.productPriceAfterDiscount}</p>
                   <p className={style['product-price']}>₹{item.productId.productPrice}</p>
                   </div>
-                  <p className={style['product-discount']}>{item.productId.productDicount}% Off</p>
+                  <p className={style['product-discount']}>{item.productId.productDiscount}% Off</p>
 
                   <div className={style["buttons"]}>
                     <div className={style["quantity-box"]}>
