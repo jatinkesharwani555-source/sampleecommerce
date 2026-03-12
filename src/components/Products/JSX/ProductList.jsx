@@ -24,10 +24,10 @@ const ProductList = ({ products, heading, loggedIn, role, showAdminActions = fal
               {showAdminActions && loggedIn && role === "admin" && (
                 <div className={styles["edit-del-cnt"]}>
                   <Link to={`/admin/edit-product/${product._id}`}>
-                    Edit Product
+                    Edit
                   </Link>
                   <Link to={`/admin/delete-product/${product._id}`}>
-                    Delete Product
+                    Delete
                   </Link>
                 </div>
               )}
