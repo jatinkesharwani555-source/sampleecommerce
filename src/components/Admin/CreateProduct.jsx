@@ -35,7 +35,7 @@ const CreateProduct = () => {
   // Calculate Discounted Price 
   const discountedPrice =
     product.price && product.discount
-      ? (Number(product.price) - (Number(product.price) * Number(product.discount)) / 100).toFixed(2)
+      ? Math.round(Number(product.price) - (Number(product.price) * Number(product.discount)) / 100).toFixed(2)
       : "";
 
   // HandleSubmit Function 

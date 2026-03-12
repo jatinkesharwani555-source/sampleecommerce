@@ -34,7 +34,7 @@ const EditProduct = () => {
   // Calculate Discounted Price 
   const discountedPrice =
     product.productPrice && product.productDiscount
-      ? (Number(product.price) - (Number(product.price) * Number(product.discount)) / 100).toFixed(2)
+      ? Math.round(Number(product.productPrice) - (Number(product.productPrice) * Number(product.productDiscount)) / 100)
       : "";
 
   // HandleSubmit Function 
