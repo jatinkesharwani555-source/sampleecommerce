@@ -14,10 +14,12 @@
   justify-content: center;
   gap: 14px;
   margin-bottom: 35px;
-
-  font-size: clamp(24px, 3vw, 36px);
-  font-weight: 800;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 900;
   color: #ff6b6b;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .page-heading::before,
@@ -54,11 +56,12 @@
 
 .carouselItem {
   flex: 0 0 auto;
-  width: clamp(110px, 14vw, 160px); /* auto responsive width */
+  width: clamp(110px, 14vw, 160px);
+  /* auto responsive width */
   border-radius: 16px;
   overflow: hidden;
   background: #ffffff;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   transition: 0.3s ease;
   cursor: pointer;
   text-align: center;
@@ -66,7 +69,7 @@
 
 .carouselItem:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
 }
 
 /* ===============================
@@ -75,7 +78,8 @@
 
 .carouselImage {
   width: 100%;
-  height: clamp(90px, 12vw, 140px); /* image responsive */
+  height: clamp(90px, 12vw, 140px);
+  /* image responsive */
   object-fit: cover;
 }
 
