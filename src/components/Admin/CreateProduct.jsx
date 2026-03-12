@@ -50,6 +50,7 @@ const CreateProduct = () => {
       formData.append("description", product.description);
       formData.append("price", Number(product.price));
       formData.append("discount", Number(product.discount));
+      formData.append("discountedPrice", Number(discountedPrice))
       formData.append("category", product.category);
       formData.append("sellerType", product.sellerType);
       files.forEach(file => {
