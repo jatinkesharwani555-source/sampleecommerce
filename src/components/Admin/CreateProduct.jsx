@@ -59,13 +59,13 @@ const CreateProduct = () => {
 
       const response = await submitProductForm(formData);
       if (!response.data.success) {
-        setServerError(response.data.message || "Something Went Wrong");
+        setServerError(response?.data?.message || "Something Went Wrong");
         return;
       }
       navigate("/");
 
     } catch (err) {
-      setServerError(err.response?.data?.message || "Something Went Wrong");
+      setServerError(err.response?.data?.message || "Something Went Wrongggg");
     } finally {
       setLoading(false);
     }
