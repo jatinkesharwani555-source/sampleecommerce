@@ -8,7 +8,7 @@
 }
 
 /* ===============================
-   MAIN CART CONTAINER
+   MAIN PAGE CONTAINER
    =============================== */
 .cart-main-cnt {
   width: 100%;
@@ -25,7 +25,7 @@
 }
 
 /* ===============================
-   CART CONTAINER (CARD)
+   CART CONTAINER (GLASS CARD)
    =============================== */
 .cart-cnt {
   width: 100%;
@@ -39,7 +39,7 @@
 }
 
 /* ===============================
-   SECTION 1: CART ITEMS
+   SECTION 1
    =============================== */
 .section1 {
   min-height: 50vh;
@@ -118,36 +118,25 @@
   margin-bottom: 6px;
 }
 
-/* ===============================
-   PRICE GROUP (Discounted & Original)
-   =============================== */
-.price-group {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 4px;
-}
-
 .discounted-product-price {
   font-size: 15px;
   font-weight: 700;
   color: #e53935; /* red for discounted price */
+  margin-bottom: 4px;
 }
 
 .product-price {
   font-size: 13px;
   color: #9ca3af;
   text-decoration: line-through;
+  margin-bottom: 4px;
+  display: inline-block;
 }
 
-/* ===============================
-   DISCOUNT PERCENTAGE
-   =============================== */
 .product-discount {
   font-size: 12px;
   color: #15803d;
   font-weight: 600;
-  margin-bottom: 6px;
 }
 
 /* ===============================
@@ -162,7 +151,7 @@
 }
 
 /* ===============================
-   QUANTITY BOX
+   QUANTITY
    =============================== */
 .quantity-box {
   display: flex;
@@ -250,7 +239,7 @@
 }
 
 /* ===============================
-   SECTION 2 (TOTALS CARD)
+   SECTION 2 (TOTAL CARD)
    =============================== */
 .section2 {
   background: rgba(255, 255, 255, 0.95);
@@ -341,11 +330,6 @@
 
   .item-total {
     align-self: flex-end;
-  }
-
-  .price-group {
-    flex-direction: column;
-    gap: 2px;
   }
 }
 
