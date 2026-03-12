@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   padding: 20px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
 
   background:
     radial-gradient(circle at top left, #ffd1d6, transparent 60%),
@@ -101,7 +101,7 @@
   align-items: center;
   gap: 10px;
   font-size: clamp(22px, 2.4vw, 30px);
-  font-weight: 700;
+  font-weight: 900;
   color: #ff6b6b;
   margin-bottom: 18px;
   text-align: left;

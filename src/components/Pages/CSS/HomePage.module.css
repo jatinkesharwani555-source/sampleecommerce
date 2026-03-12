@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
 /* ===============================
    MAIN PAGE CONTAINER
    =============================== */
@@ -7,8 +9,7 @@
   display: flex;
   justify-content: center;
   /* padding: 20px 14px; */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+  font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
   background:
     radial-gradient(circle at top left, #ffd1d6, transparent 60%),
     radial-gradient(circle at bottom right, #c7d2fe, transparent 60%),
@@ -44,7 +45,7 @@
   gap: 14px;
 
   font-size: clamp(24px, 5vw, 42px);
-  font-weight: 800;
+  font-weight: 900;
   color: #ff6b6b;
   text-align: center;
 }
