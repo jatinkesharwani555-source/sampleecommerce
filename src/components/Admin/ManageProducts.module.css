@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
 /* ===============================
    RESET
    =============================== */
@@ -17,8 +19,7 @@
   display: flex;
   justify-content: center;
   padding: 0 20px;
-
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .page-container {

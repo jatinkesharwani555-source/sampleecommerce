@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
 /* ===============================
    RESET
    =============================== */
@@ -21,7 +23,7 @@
     radial-gradient(circle at top left, #ffd1d6, transparent 60%),
     radial-gradient(circle at bottom right, #c7d2fe, transparent 60%),
     linear-gradient(135deg, #e0e3e8, #d6dbff);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* ===============================
@@ -80,7 +82,7 @@
   align-items: flex-start;
   gap: 18px;
   padding: 18px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 /* ===============================
@@ -101,7 +103,7 @@
   object-fit: cover;
   border-radius: 14px;
   border: 1px solid #ddd;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
 /* ===============================
@@ -121,7 +123,8 @@
 .discounted-product-price {
   font-size: 15px;
   font-weight: 700;
-  color: #e53935; /* red for discounted price */
+  color: #e53935;
+  /* red for discounted price */
   margin-bottom: 4px;
 }
 

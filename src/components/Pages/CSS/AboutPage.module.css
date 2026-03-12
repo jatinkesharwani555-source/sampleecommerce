@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
 /* ===== MAIN CONTAINER ===== */
 .aboutpage-main-cnt {
   min-height: 100vh;
@@ -35,6 +37,7 @@
   font-size: clamp(26px, 3vw, 36px);
   font-weight: 700;
   color: #ff6b6b;
+  font-family: "Inter";
 }
 
 .aboutpage-heading::before,

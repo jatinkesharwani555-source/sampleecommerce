@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
 /* ===== MAIN WRAPPER ===== */
 .signup-main-cnt {
   min-height: 100vh;
@@ -9,7 +11,7 @@
     radial-gradient(circle at top left, rgba(102, 126, 234, 0.25), transparent 60%),
     radial-gradient(circle at bottom right, rgba(118, 75, 162, 0.25), transparent 60%),
     linear-gradient(135deg, #8fa3f0, #a88bd8);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* ===== CARD ===== */

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
 /* ================================================= */
 /* ================= GLOBAL RESET ================== */
 /* ================================================= */
@@ -21,7 +23,7 @@
     radial-gradient(circle at top left, #ffd1d6, transparent 60%),
     radial-gradient(circle at bottom right, #c7d2fe, transparent 60%),
     linear-gradient(135deg, #e0e3e8, #d6dbff);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Inter", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .contactpage-container {
@@ -45,6 +47,7 @@
   font-size: clamp(20px, 3vw, 26px);
   font-weight: 700;
   color: #ff6b6b;
+  font-family: "Inter";
 }
 
 .contactpage-heading::before,
@@ -136,6 +139,7 @@
   font-weight: 700;
   margin-bottom: 16px;
   color: #ff6b6b;
+  font-family: "Inter";
 }
 
 .get-in-touch-quote::before,
