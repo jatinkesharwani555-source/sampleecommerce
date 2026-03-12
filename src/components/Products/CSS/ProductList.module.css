@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 /* ===============================
    RESET
    =============================== */
@@ -38,7 +39,7 @@
   font-weight: 900;
   color: #ff6b6b;
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Arial, sans-serif;
+  font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
