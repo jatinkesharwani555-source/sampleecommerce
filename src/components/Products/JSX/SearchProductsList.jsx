@@ -25,10 +25,10 @@ const SearchProductsList = ({ loggedIn, role }) => {
       setLoading(true);
       if (search) {
         const response = await searchProducts(search);
-        setProducts(calculateDiscountedProductsPrice(response.data.data));
+        setProducts(response.data.data);
       } else {
         const response = await fetchAllProducts();
-        setProducts(calculateDiscountedProductsPrice(response.data.data));
+        setProducts(response.data.data);
       }
     } catch (err) {
       setserverError(err.response?.data?.message || "SOMETHING WENT WRONG");

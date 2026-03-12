@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { fetchAllProducts } from "../api/allProductList.api";
-import { calculateDiscountedProductsPrice } from "../utils/priceCalculator";
 
 const useAllProducts = (id) => {
   const [product, setProduct] = useState(null);
@@ -12,9 +11,10 @@ const useAllProducts = (id) => {
     try {
       setLoading(true);
       const response = await fetchAllProducts();
-      setProduct(calculateDiscountedProductsPrice(response.data.data));
+      setProduct(response.data.data);
     } catch (err) {
-      setError("Failed To Load Product");
+      console.error(err.response?.data?.message || "Failed To Load Product")
+      setError(err.response?.data?.message || "Failed To Load Product");
     } finally {
       setLoading(false);
     }

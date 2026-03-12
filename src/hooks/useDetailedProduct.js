@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { getProductById } from "../api/productApi";
 import { addToCartApi } from "../api/addToCart.api";
-import { calculateDiscountedPrice } from "../utils/priceCalculator";
 
 const useProductDetails = (id, navigate) => {
   const [product, setProduct] = useState(null);
@@ -14,17 +13,13 @@ const useProductDetails = (id, navigate) => {
   const fetchProduct = async () => {
     try {
       setLoading(true);
-      const { data } = await getProductById(id);
+      const response = await getProductById(id);
 
-      const discountedPrice = calculateDiscountedPrice(
-        data.data.productPrice,
-        data.data.productDiscount
-      );
-
-      setProduct({ ...data.data, discountedPrice });
-      setSelectedImage(data.data.productImage?.[0]);
+      setProduct(response.data.data);
+      setSelectedImage(response.data.data.productImage?.[0]);
     } catch (err) {
-      setError(err.response?.data?.message || "Failed to load product");
+      console.error(err.response?.data?.message || "Failed To Load Detailed Product")
+      setError(err.response?.data?.message || "Failed To Load Detailed Product");
     } finally {
       setLoading(false);
     }

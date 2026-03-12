@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { calculateDiscountedProductsPrice } from '../utils/priceCalculator';
 import { fetchCategoryWiseProductsApi } from '../api/categoryWiseProducts.api';
 
 const useCategoryWiseProductList = (category) => {
@@ -13,9 +12,10 @@ const useCategoryWiseProductList = (category) => {
     try {
       setLoading(true);
       const response = await fetchCategoryWiseProductsApi(category);
-      setProduct(calculateDiscountedProductsPrice(response.data.data.products));
+      setProduct(response.data.data.products);
     } catch (err) {
-      setServerError(err.response?.data?.message || "Something Went Wrong");
+      console.error(err.response?.data?.message || "Failed To Load CategoryWise Products")
+      setError(err.response?.data?.message || "Failed To Load CategoryWise Products");
     } finally {
       setLoading(false);
     }

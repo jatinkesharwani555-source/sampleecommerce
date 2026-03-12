@@ -13,7 +13,7 @@ const DeleteProduct = () => {
   const { id } = useParams();
 
   // Fetch Product 
-  const { product, discountedPrice, loading, error } = useProduct(id);
+  const { product, loading, error } = useProduct(id);
 
   const handleDelete = async () => {
     setServerError(null);
@@ -28,7 +28,14 @@ const DeleteProduct = () => {
       setDeleteLoading(false);
     }
   }
-  if (loading) return <LoadingSpinner />;
+
+  // For SEO 
+  useEffect(() => {
+    document.title = "Sign Up | Kesharwani Mart";
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  if (loading) return <LoadingSpinner text='Fetching Product' />;
 
   return (
     <div className={styles['page-cnt']}>
@@ -38,11 +45,12 @@ const DeleteProduct = () => {
 
       {product && (
         <Link to={`/product/${product._id}`}>
-          <img src={product?.productImage?.[0]} alt="Product Image" />
+          <img src={product?.productImage?.[0] || "/default-product-image.jpg"} alt="Product Image" />
           <div className={styles["product-info"]}>
             <p><strong>Name:</strong> {product.productMiniDesc}</p>
             <p><strong>Price:</strong> ₹{product.productPrice}</p>
-            <p><strong>Discounted Price:</strong> ₹{discountedPrice}</p>
+            <p><strong>Discount:</strong> ₹{product.productDiscount}</p>
+            <p><strong>Discounted Price:</strong> ₹{product.productPriceAfterDiscount}</p>
             <p><strong>Category:</strong> {product.productCategory}</p>
           </div>
         </Link>

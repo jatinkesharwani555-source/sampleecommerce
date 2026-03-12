@@ -32,6 +32,12 @@ const CreateProduct = () => {
     setFiles([...e.target.files]);
   }
 
+  // Calculate Discounted Price 
+  const discountedPrice =
+    product.price && product.discount
+      ? (Number(product.price) - (Number(product.price) * Number(product.discount)) / 100).toFixed(2)
+      : "";
+
   // HandleSubmit Function 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,6 +50,7 @@ const CreateProduct = () => {
       formData.append("description", product.description);
       formData.append("price", Number(product.price));
       formData.append("discount", Number(product.discount));
+      formData.append("discountedPrice", Number(discountedPrice))
       formData.append("category", product.category);
       formData.append("sellerType", product.sellerType);
       files.forEach(file => {
@@ -95,6 +102,12 @@ const CreateProduct = () => {
               <input type="number" name='discount' placeholder='Enter Discount Here...' className={`${styles['form-input']} ${styles['form-productDiscount']}`} value={product.discount} onChange={handleChange} />
             </div>
             {error.productDiscount && <p className={styles['error']}>{error.productDiscount}</p>}
+
+            <div className={styles['input-wrapper']}>
+              <label className={styles['label']} htmlFor="discountedPrice">Discounted Price :</label>
+              <input type="number" name="discountedPrice" className={`${styles['form-input']}`} value={discountedPrice} readOnly placeholder="Auto Calculated" />
+            </div>
+            {error.discountedPrice && <p className={styles['error']}>{error.discountedPrice}</p>}
 
             <div className={styles['input-wrapper']}>
               <label className={styles['label']} htmlFor="productCategory">Category :</label>

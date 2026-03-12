@@ -15,7 +15,7 @@ const ProductList = ({ products, heading, loggedIn, role, showAdminActions = fal
                 </div>
                 <div className={styles['product-body']}>
                   <p className={styles['mini-desc']}>{product.productMiniDesc}</p>
-                  <p className={styles['price']}>&#8377;{product.discountedPrice} <span className={styles['strikethrough']}>&#8377;{product.productPrice}</span></p>
+                  <p className={styles['price']}>&#8377;{product.productPriceAfterDiscount} <span className={styles['strikethrough']}>&#8377;{product.productPrice}</span></p>
                   <p className={styles['discount']}>{product.productDiscount}% Off</p>
                 </div>
               </Link>

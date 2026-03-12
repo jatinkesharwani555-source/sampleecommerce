@@ -1,6 +1,6 @@
 export const calculateSubTotal = (cartItems) => {
   return cartItems.reduce(
-    (acc, item) => acc + item.productId.productPrice * item.quantity,
+    (acc, item) => acc + item.productId.productPriceAfterDiscount * item.quantity,
     0
   );
 };

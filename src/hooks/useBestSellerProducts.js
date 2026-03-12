@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { fetchBestSellerProducts } from "../api/bestSellerProducts.api";
-import { calculateDiscountedProductsPrice } from "../utils/priceCalculator";
 
 const useBestSellerProducts = () => {
   const [products, setProducts] = useState([]);
@@ -12,9 +11,10 @@ const useBestSellerProducts = () => {
     try {
       setLoading(true);
       const response = await fetchBestSellerProducts();
-      setProducts(calculateDiscountedProductsPrice(response.data.data));
+      setProducts(response.data.data);
     } catch (err) {
-      setServerError(err.response?.data?.message || "Something Went Wrong");
+      console.error(err.response?.data?.message || "Failed To Load BestSeller Products")
+      setError(err.response?.data?.message || "Failed To Load BestSeller Products");
     } finally {
       setLoading(false);
     }

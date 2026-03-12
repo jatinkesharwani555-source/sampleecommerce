@@ -52,7 +52,9 @@ const ProductCart = () => {
 
                 <div className={style["part2-product-info"]}>
                   <h3>{item.productId.productMiniDesc}</h3>
-                  <p>₹{item.productId.productPrice}</p>
+                  <p className={style['discounted-product-price']}>₹{item.productId.productPriceAfterDiscount}</p>
+                  <p className={style['product-price']}>₹{item.productId.productPrice}</p>
+                  <p className={style['product-discount']}>₹{item.productId.productDicount}</p>
 
                   <div className={style["buttons"]}>
                     <div className={style["quantity-box"]}>
@@ -95,7 +97,7 @@ const ProductCart = () => {
               </div>
 
               <p className={style["item-total"]}>
-                ₹{item.productId.productPrice * item.quantity}
+                ₹{item.productId.productPriceAfterDiscount * item.quantity}
               </p>
             </div>
           ))}

@@ -28,6 +28,12 @@ const EditProduct = () => {
     setFiles([...e.target.files]);
   }
 
+  // Calculate Discounted Price 
+  const discountedPrice =
+    product.productPrice && product.productDiscount
+      ? (Number(product.price) - (Number(product.price) * Number(product.discount)) / 100).toFixed(2)
+      : "";
+
   // Fetch Product 
   const { product, loading, error, setProduct } = useProduct(id);
 
@@ -43,6 +49,7 @@ const EditProduct = () => {
       formData.append("description", product.productDesc);
       formData.append("price", Number(product.productPrice));
       formData.append("discount", Number(product.productDiscount));
+      formData.append("discountedPrice", Number(discountedPrice));
       formData.append("category", product.productCategory);
       formData.append("sellerType", product.sellerType);
       if (files.length > 0) {
@@ -99,6 +106,12 @@ const EditProduct = () => {
               <input type="number" name='productDiscount' placeholder='Enter Discount Here...' className={`${styles['form-input']} ${styles['form-productDiscount']}`} value={product.productDiscount} onChange={handleChange} />
             </div>
             {validationError.productDiscount && <p className={styles['error']}>{validationError.productDiscount}</p>}
+
+            <div className={styles['input-wrapper']}>
+              <label className={styles['label']} htmlFor="discountedPrice">Discounted Price :</label>
+              <input type="number" name="discountedPrice" className={`${styles['form-input']}`} value={discountedPrice} readOnly placeholder="Auto Calculated" />
+            </div>
+            {validationError.discountedPrice && <p className={styles['error']}>{validationError.discountedPrice}</p>}
 
             <div className={styles['input-wrapper']}>
               <label className={styles['label']} htmlFor="productCategory">Category :</label>

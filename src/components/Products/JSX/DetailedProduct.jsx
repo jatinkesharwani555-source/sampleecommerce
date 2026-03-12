@@ -71,7 +71,7 @@ const DetailedProduct = ({ loggedIn, role }) => {
           <div className={styles.part2}>
             <h2>{product.productMiniDesc}</h2>
             <p className={styles.price}>
-              ₹{product.discountedPrice}
+              ₹{product.productPriceAfterDiscount}
               <span>₹{product.productPrice}</span>
             </p>
             <p className={styles.discount}>{product.productDiscount}% OFF</p>

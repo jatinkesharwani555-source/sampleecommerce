@@ -24,7 +24,6 @@ const SearchBar = ({ onSearch }) => {
     try {
       const response = await searchProducts(query);
       setSuggestions(response.data.data.slice(0, 6));
-      console.log(response.data.data)
     } catch (err) {
     }
   };

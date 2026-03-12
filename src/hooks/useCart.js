@@ -14,7 +14,8 @@ const useCart = () => {
       const res = await getCart();
       setCartItems(res.data.data);
     } catch (err) {
-      setError("FAILED TO LOAD CART");
+      console.error(err.response?.data?.message || "Failed To Load Cart")
+      setError(err.response?.data?.message || "Failed To Load Cart");
     } finally {
       setLoading(false);
     }
