@@ -8,74 +8,67 @@
 }
 
 /* ===============================
-   MAIN PAGE
+   MAIN CART CONTAINER
    =============================== */
 .cart-main-cnt {
   width: 100%;
   min-height: 100vh;
   padding: 30px 20px;
-
   display: flex;
   flex-direction: column;
   gap: 20px;
-
   background:
     radial-gradient(circle at top left, #ffd1d6, transparent 60%),
     radial-gradient(circle at bottom right, #c7d2fe, transparent 60%),
     linear-gradient(135deg, #e0e3e8, #d6dbff);
-
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* ===============================
-   CART CONTAINER (GLASS CARD)
+   CART CONTAINER (CARD)
    =============================== */
 .cart-cnt {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-
   border-radius: 22px;
   padding: 30px;
-
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 /* ===============================
-   SECTION 1
+   SECTION 1: CART ITEMS
    =============================== */
 .section1 {
   min-height: 50vh;
 }
 
 /* ===============================
-   PAGE HEADING (CONTACT STYLE)
+   PAGE HEADING
    =============================== */
 .page-heading {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 12px;
-
   margin-bottom: 30px;
   font-size: clamp(26px, 3vw, 36px);
   font-weight: 700;
-  color: #ff6b6b;
+  color: #ff4d4d;
 }
 
 .page-heading::before,
 .page-heading::after {
   content: "";
   flex: 1;
-  height: 1.5px;
-  background: linear-gradient(to right, transparent, #9ca3af);
+  height: 2px;
+  background: linear-gradient(to right, transparent, #cbd5e1);
 }
 
 .page-heading::after {
-  background: linear-gradient(to left, transparent, #9ca3af);
+  background: linear-gradient(to left, transparent, #cbd5e1);
 }
 
 /* ===============================
@@ -86,7 +79,6 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 18px;
-
   padding: 18px 0;
   border-bottom: 1px solid rgba(0,0,0,0.08);
 }
@@ -107,7 +99,6 @@
   width: 90px;
   height: 90px;
   object-fit: cover;
-
   border-radius: 14px;
   border: 1px solid #ddd;
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
@@ -127,10 +118,36 @@
   margin-bottom: 6px;
 }
 
-.part2-product-info p {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 10px;
+/* ===============================
+   PRICE GROUP (Discounted & Original)
+   =============================== */
+.price-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.discounted-product-price {
+  font-size: 15px;
+  font-weight: 700;
+  color: #e53935; /* red for discounted price */
+}
+
+.product-price {
+  font-size: 13px;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+/* ===============================
+   DISCOUNT PERCENTAGE
+   =============================== */
+.product-discount {
+  font-size: 12px;
+  color: #15803d;
+  font-weight: 600;
+  margin-bottom: 6px;
 }
 
 /* ===============================
@@ -141,10 +158,11 @@
   align-items: center;
   gap: 14px;
   flex-wrap: wrap;
+  margin-top: 8px;
 }
 
 /* ===============================
-   QUANTITY
+   QUANTITY BOX
    =============================== */
 .quantity-box {
   display: flex;
@@ -155,11 +173,9 @@
 .quantity-box button {
   width: 30px;
   height: 30px;
-
   border: none;
   border-radius: 8px;
   background: #f1f5f9;
-
   font-size: 16px;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -190,18 +206,11 @@
   background: transparent;
   border: 1px solid #fca5a5;
   color: #e53935;
-
   font-size: 12.5px;
   font-weight: 600;
   padding: 6px 12px;
-
   border-radius: 8px;
   cursor: pointer;
-
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-
   transition: all 0.25s ease;
 }
 
@@ -228,39 +237,28 @@
 /* ===============================
    EMPTY / LOADING / ERROR
    =============================== */
-.empty-cart {
+.empty-cart,
+.loading,
+.main-error {
   text-align: center;
   font-size: 16px;
-  color: #777;
-  margin-top: 120px;
-}
-
-.loading {
-  text-align: center;
-  font-size: 18px;
-  padding: 40px;
+  margin-top: 60px;
 }
 
 .main-error {
-  color: #d9534f;
-  background: #fdecea;
-  padding: 12px;
-  border-radius: 8px;
-  text-align: center;
-  font-weight: 600;
+  color: #dc2626;
 }
 
 /* ===============================
-   SECTION 2 (TOTAL CARD)
+   SECTION 2 (TOTALS CARD)
    =============================== */
 .section2 {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-
   border-radius: 22px;
   padding: 25px;
-
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  margin-top: 20px;
 }
 
 /* ===============================
@@ -315,18 +313,14 @@
 .proceed-btn {
   display: block;
   width: 100%;
-
   padding: 14px 0;
   border-radius: 14px;
-
   font-size: 16px;
   font-weight: 600;
   text-align: center;
-
   background: linear-gradient(135deg, #ff8c42, #ff3d00);
   color: #fff;
   text-decoration: none;
-
   box-shadow: 0 6px 15px rgba(255, 100, 50, 0.5);
   transition: all 0.3s ease;
 }
@@ -342,10 +336,16 @@
 @media (max-width: 768px) {
   .cart-item {
     flex-direction: column;
+    gap: 10px;
   }
 
   .item-total {
     align-self: flex-end;
+  }
+
+  .price-group {
+    flex-direction: column;
+    gap: 2px;
   }
 }
 
