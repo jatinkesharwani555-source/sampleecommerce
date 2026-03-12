@@ -94,3 +94,12 @@
   font-weight: 600;
   color: #111827;
 }
+
+/* ===============================
+   MOBILE EXTRA COMPACT
+   =============================== */
+@media (max-width: 480px) {
+  .page-heading{
+    font-size: 20px;
+  }
+}

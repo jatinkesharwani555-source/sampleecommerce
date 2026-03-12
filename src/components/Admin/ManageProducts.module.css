@@ -36,11 +36,11 @@
   justify-content: center;
   gap: 16px;
   margin-bottom: 45px;
-
-  font-size: clamp(28px, 3vw, 40px);
-  font-weight: 800;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 900;
   color: #ff4d4d;
   text-align: center;
+  font-family: "Inter";
 }
 
 .page-heading::before,
