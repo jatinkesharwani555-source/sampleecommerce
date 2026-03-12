@@ -13,7 +13,7 @@ const AllUsers = () => {
     try {
       setLoading(true);
       const response = await getAllUsersApi();
-      console.log(response.data.data.allUsers);
+      console.log(response.data.data);
       setAllUsers(response.data.data.allUsers);
     } catch (err) {
       setServerError(err.response?.data?.message || "SOMETHING WENT WRONG");
