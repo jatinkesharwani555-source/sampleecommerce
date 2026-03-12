@@ -1,4 +1,13 @@
 /* ===============================
+   RESET
+   =============================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===============================
    MAIN PAGE CONTAINER
    =============================== */
 .page-main-cnt {
@@ -7,8 +16,8 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  /* padding: 0 12px; */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0 12px;
 }
 
 .page-container {
@@ -17,7 +26,7 @@
 }
 
 /* ===============================
-   HEADING
+   PAGE HEADING
    =============================== */
 .page-heading {
   display: flex;
@@ -52,14 +61,14 @@
   gap: 14px;
 }
 
-/* ===============================
-   PRODUCT CARD
-   =============================== */
 .product-cnt-link {
   text-decoration: none;
   color: inherit;
 }
 
+/* ===============================
+   PRODUCT CARD
+   =============================== */
 .product-card {
   background: #ffffff;
   border-radius: 12px;
@@ -74,10 +83,10 @@
 }
 
 /* ===============================
-   PRODUCT IMAGE (SMALLER)
+   PRODUCT IMAGE
    =============================== */
 .product-header {
-  height: 140px; /* 👈 Smaller image */
+  height: 140px; /* Desktop default */
   overflow: hidden;
   background: #f3f4f6;
 }
@@ -86,6 +95,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .image {
+  transform: scale(1.05);
 }
 
 /* ===============================
@@ -104,7 +118,6 @@
   color: #111827;
   text-transform: capitalize;
   line-height: 1.3;
-
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -144,6 +157,10 @@
   text-decoration: none;
   font-weight: 600;
   color: #2563eb;
+  text-align: center;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: 0.2s ease;
 }
 
 .edit-del-cnt a:hover {
@@ -191,7 +208,7 @@
 @media (max-width: 480px) {
 
   .product-header {
-    height: 120px; /* 👈 Even smaller for mobile */
+    height: 120px; /* smaller images */
   }
 
   .mini-desc {
