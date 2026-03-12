@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import style from "../CSS/ProductCart.module.css";
 import useCart from "../../../hooks/useCart.js";
 import { SHIPPING_FEE } from "../../../constants/cart.constants";
@@ -6,7 +6,6 @@ import LoadingSpinner from "../../LoadingSpinner.jsx";
 import { useEffect } from "react";
 
 const ProductCart = () => {
-  const navigate = useNavigate();
 
   const {
     cartItems,
@@ -17,7 +16,7 @@ const ProductCart = () => {
     total,
     error,
     loading,
-  } = useCart(navigate);
+  } = useCart();
 
   // For SEO 
   useEffect(() => {
@@ -44,7 +43,7 @@ const ProductCart = () => {
                 <Link to={`/product/${item.productId._id}`}>
                   <div className={style["part1-image"]}>
                     <img
-                      src={item.productId.productImage?.[0]}
+                      src={item.productId.productImage?.[0] || "/default-product-image.jpg"}
                       alt={item.productId.productMiniDesc}
                       className={style["product-img"]}
                     />

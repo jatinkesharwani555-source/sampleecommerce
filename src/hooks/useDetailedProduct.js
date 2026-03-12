@@ -31,6 +31,7 @@ const useProductDetails = (id, navigate) => {
   };
 
   const addToCart = async () => {
+    if(!product) return;
     try {
       setCartLoading(true);
       await addToCartApi({ productId: product._id, quantity: 1 });
@@ -47,7 +48,7 @@ const useProductDetails = (id, navigate) => {
 
   useEffect(() => {
     fetchProduct();
-  }, []);
+  }, [id]);
 
   return {
     product,

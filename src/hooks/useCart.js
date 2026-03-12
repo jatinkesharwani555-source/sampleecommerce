@@ -3,7 +3,7 @@ import { getCart, updateCartItem, removeCartItem } from "../api/cartApi";
 import { calculateSubTotal } from "../utils/priceCalculator";
 import { SHIPPING_FEE } from "../constants/cart.constants";
 
-const useCart = (navigate) => {
+const useCart = () => {
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -14,8 +14,7 @@ const useCart = (navigate) => {
       const res = await getCart();
       setCartItems(res.data.data);
     } catch (err) {
-      if (err.response?.status === 401) navigate("/login");
-      else setError("FAILED TO LOAD CART");
+      setError("FAILED TO LOAD CART");
     } finally {
       setLoading(false);
     }

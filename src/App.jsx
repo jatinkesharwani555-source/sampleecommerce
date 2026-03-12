@@ -278,7 +278,7 @@ function App() {
       path: "/product/image-preview/:id/:image",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
-          <Suspense fallback={<LoadingSpinner text='Loading Image'/>}>
+          <Suspense fallback={<LoadingSpinner text='Loading Image' />}>
             <ProductImagePreview />
           </Suspense>
         </Layout>
@@ -289,7 +289,9 @@ function App() {
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
           <Suspense fallback={<LoadingSpinner />}>
-            <ProductCart />
+            <ProtectedRoute isLoggedIn={isLoggedIn}>
+              <ProductCart />
+            </ProtectedRoute>
           </Suspense>
         </Layout>
       ),

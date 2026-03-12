@@ -21,13 +21,17 @@ const DetailedProduct = ({ loggedIn, role }) => {
     addToCart,
   } = useProductDetails(id, navigate);
 
-  const { cartItems, fetchCart } = useCart(navigate);
+  const { cartItems, fetchCart } = useCart();
 
   const isInCart = cartItems.some(
     (item) => item.productId?._id === product?._id
   );
 
   const handleAddToCart = async () => {
+    if(!loggedIn) {
+      navigate("/login");
+      return;
+    }
     await addToCart();
     fetchCart();
   };
