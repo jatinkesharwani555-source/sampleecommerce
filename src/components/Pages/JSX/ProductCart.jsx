@@ -54,7 +54,7 @@ const ProductCart = () => {
                   <h3>{item.productId.productMiniDesc}</h3>
                   <p className={style['discounted-product-price']}>₹{item.productId.productPriceAfterDiscount}</p>
                   <p className={style['product-price']}>₹{item.productId.productPrice}</p>
-                  <p className={style['product-discount']}>₹{item.productId.productDicount}</p>
+                  <p className={style['product-discount']}>{item.productId.productDicount}% Off</p>
 
                   <div className={style["buttons"]}>
                     <div className={style["quantity-box"]}>
