@@ -1,20 +1,11 @@
 import { useEffect, useState, Suspense, lazy } from 'react';
 import './App.css';
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
-import axios from 'axios';
 import Layout from './components/Layout';
-import MainPage from './components/Pages/JSX/MainPage';
-import PageNotFound from './components/Pages/JSX/PageNotFound';
-import LoadingSpinner from './components/LoadingSpinner'; // create a simple spinner component
-import SearchProductsList from './components/Products/JSX/SearchProductsList';
-import ManageProducts from './components/Admin/ManageProducts';
-import EditProduct from './components/Admin/EditProduct';
-import DeleteProduct from './components/Admin/DeleteProduct';
-import ImagePreview from './components/Products/JSX/ProductImagePreview';
+import LoadingSpinner from './components/LoadingSpinner';
 import { authCheck } from './api/authCheck';
-import ProductImagePreview from './components/Products/JSX/ProductImagePreview';
 
-// Lazy load big components
+// Lazy load heavy components
 const SignUp = lazy(() => import('./components/Login&Logout/JSX/SignUp'));
 const Login = lazy(() => import('./components/Login&Logout/JSX/Login'));
 const Logout = lazy(() => import('./components/Login&Logout/JSX/Logout'));
@@ -29,44 +20,51 @@ const ChangePassword = lazy(() => import('./components/Login&Logout/JSX/ChangePa
 const Dashboard = lazy(() => import('./components/Admin/Dashboard'));
 const AllUsers = lazy(() => import('./components/Admin/AllUsers'));
 const CreateProduct = lazy(() => import('./components/Admin/CreateProduct'));
+const ManageProducts = lazy(() => import('./components/Admin/ManageProducts'));
+const EditProduct = lazy(() => import('./components/Admin/EditProduct'));
+const DeleteProduct = lazy(() => import('./components/Admin/DeleteProduct'));
 const DetailedProduct = lazy(() => import('./components/Products/JSX/DetailedProduct'));
 const ProductCart = lazy(() => import('./components/Pages/JSX/ProductCart'));
 const CategoryWiseProductList = lazy(() => import('./components/Products/JSX/CategoryWiseProductList'));
+const SearchProductsList = lazy(() => import('./components/Products/JSX/SearchProductsList'));
+const PageNotFound = lazy(() => import('./components/Pages/JSX/PageNotFound'));
+const ProductImagePreview = lazy(() => import('./components/Products/JSX/ProductImagePreview'));
 
 // ===== ProtectedRoute Component =====
 const ProtectedRoute = ({ isLoggedIn, children }) => {
+  if (isLoggedIn === null) return <LoadingSpinner text="Checking Auth..." />;
   if (!isLoggedIn) return <Navigate to="/login" replace />;
   return children;
 };
 
 // ===== AdminRoute Component =====
 const AdminRoute = ({ isLoggedIn, role, children }) => {
+  if (isLoggedIn === null) return <LoadingSpinner text="Checking Auth..." />;
   if (!isLoggedIn || role !== "admin") return <Navigate to="/" replace />;
   return children;
 };
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(null); // null = checking
   const [role, setRole] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   // ===== Check auth status =====
-  const checkAuth = async () => {
-    try {
-      const response = await authCheck();
-      if (response.data.success) {
-        setIsLoggedIn(true);
-        setRole(response.data.role);
-      }
-    } catch (err) {
-      setIsLoggedIn(false);
-      setRole(null);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const res = await authCheck();
+        if (res.data.success) {
+          setIsLoggedIn(true);
+          setRole(res.data.role);
+        } else {
+          setIsLoggedIn(false);
+          setRole(null);
+        }
+      } catch (err) {
+        setIsLoggedIn(false);
+        setRole(null);
+      }
+    };
     checkAuth();
   }, []);
 
@@ -190,6 +188,7 @@ function App() {
         </Layout>
       ),
     },
+
     // ===== Admin Routes =====
     {
       path: "/admin/dashboard",
@@ -263,6 +262,7 @@ function App() {
         </Layout>
       ),
     },
+
     // ===== Product Routes =====
     {
       path: "/product/:id",
@@ -278,7 +278,7 @@ function App() {
       path: "/product/image-preview/:id/:image",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
-          <Suspense fallback={<LoadingSpinner text='Loading Image' />}>
+          <Suspense fallback={<LoadingSpinner text='Loading Image...' />}>
             <ProductImagePreview />
           </Suspense>
         </Layout>
@@ -330,7 +330,7 @@ function App() {
     },
   ]);
 
-  return <>{loading ? <LoadingSpinner text='Fetching Products...' /> : <RouterProvider router={router} />}</>;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
