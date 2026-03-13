@@ -76,7 +76,7 @@ const ContactPage = () => {
 
         <div className={styles["map-cnt"]}>
           <iframe
-            src="https://www.google.com/maps?q=Bharwari%20Kaushambi&output=embed"
+            src="https://www.google.com/maps?q=Hanuman%20Mandir%20Bharwari%20Kaushambi&output=embed"
             width="100%"
             height="260"
             style={{ border: 0 }}
