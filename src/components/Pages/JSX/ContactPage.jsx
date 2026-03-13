@@ -63,8 +63,8 @@ const ContactPage = () => {
             {/* Business Hours */}
             <div className={styles["business-hours"]}>
               <h4><FaClock /> Business Hours</h4>
-              <p>Monday - Saturday : 9 AM - 9 PM</p>
-              <p>Sunday : 10 AM - 6 PM</p>
+              <p>Monday - Saturday : 7 AM - 10 PM</p>
+              <p>Sunday : 7 AM - 10 PM</p>
             </div>
 
             {/* Call Button */}
