@@ -178,7 +178,7 @@ const ContactPage = () => {
         rel="noopener noreferrer"
         className={styles["whatsapp-float"]}
       >
-        WhatsApp
+        <FaWhatsapp />
       </a>
     </div>
   );
