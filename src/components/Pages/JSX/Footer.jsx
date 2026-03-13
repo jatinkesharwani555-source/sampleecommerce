@@ -68,21 +68,22 @@ const Footer = () => {
             {/* Footer  */}
             <div className={styles['footer']}>
               <ul className={styles['ul']}>
-                <h2 className={styles['ul-heading']}>Links</h2>
+                <h2 className={styles['ul-heading']}>Quick Links</h2>
+                <li className={styles['link-li']}><Link className={styles['link']} to={'/'}>Home Page</Link></li>
+                <li className={styles['link-li']}><Link className={styles['link']} to={'/products'}>All Products</Link></li>
+                <li className={styles['link-li']}><Link className={styles['link']} to={'/product-cart'}>Cart</Link></li>
+                <li className={styles['link-li']}><Link className={styles['link']} to={'/about-us'}>About Us</Link></li>
                 <li className={styles['link-li']}><Link className={styles['link']} to={'/contact-us'}>Contact Us</Link></li>
-                <li className={styles['link-li']}><Link className={styles['link']} to={'/'}>Delivery Information</Link></li>
-                <li className={styles['link-li']}><Link className={styles['link']} to={'/'}>Privacy Policy</Link></li>
-                <li className={styles['link-li']}><Link className={styles['link']} to={'/'}>Terms & Conditions</Link></li>
-                <li className={styles['link-li']}><Link className={styles['link']} to={'/'}>Events</Link></li>
+                <li className={styles['link-li']}><Link className={styles['link']} to={'/login'}>Login / Register</Link></li>
               </ul>
 
               <ul className={styles['ul']}>
-                <h2 className={styles['ul-heading']}>Custumer Service</h2>
-                <li className={styles['link-li']}><Link className={styles['link']} to={'/'}>About Us</Link></li>
-                <li className={styles['link-li']}><Link className={styles['link']} to={'/'}>Delivery Information</Link></li>
-                <li className={styles['link-li']}><Link className={styles['link']} to={'/'}>Privacy Policy</Link></li>
-                <li className={styles['link-li']}><Link className={styles['link']} to={'/'}>Terms & Conditions</Link></li>
-                <li className={styles['link-li']}><Link className={styles['link']} to={'/'}>Events</Link></li>
+                <h2 className={styles['ul-heading']}>Support & Login/SignUp</h2>
+                <li className={styles['link-li']}><Link className={styles['link']} to={'/contact-us'}>Help Center</Link></li>
+                <li className={styles['link-li']}><Link className={styles['link']} to={'/contact-us'}>Customer Support</Link></li>
+                <li className={styles['link-li']}><Link className={styles['link']} to={'/signup'}>Sign Up</Link></li>
+                <li className={styles['link-li']}><Link className={styles['link']} to={'/login'}>Login</Link></li>
+                <li className={styles['link-li']}><Link className={styles['link']} to={'/contact-us'}>Location</Link></li>
               </ul>
 
               {/* Newsletter */}
