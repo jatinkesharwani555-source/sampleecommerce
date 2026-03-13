@@ -48,7 +48,7 @@ const User = () => {
 
     const sendingData = async () => {
       try {
-        const response = await fetch("https://sampleecommercebackend-2.onrender.com/api/create-client", {
+        const response = await fetch("https://api.kesharwanimart.in/api/create-client", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(createUserDetails)
