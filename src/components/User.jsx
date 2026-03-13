@@ -27,7 +27,7 @@ const User = () => {
   // FetchingData Function 
   const fetchingData = async () => {
       try {
-        const response = await fetch("https://sampleecommercebackend-2.onrender.com/api/read-client");
+        const response = await fetch("https://api.kesharwanimart.in/api/read-client");
         const data = await response.json();
         setUserData(data.allUser);
         console.log("Your Table Data: ", data.allUser);

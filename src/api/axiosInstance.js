@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://sampleecommercebackend-2.onrender.com/api",
+  baseURL: "https://api.kesharwanimart.in/api",
   withCredentials: true,
 });
 

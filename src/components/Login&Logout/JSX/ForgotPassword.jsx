@@ -60,7 +60,7 @@ const ForgotPassword = () => {
     if (!validate1()) return;
     setError({});
     try {
-      const response = await axios.post("https://sampleecommercebackend-2.onrender.com/api/forgot-password", {
+      const response = await axios.post("https://api.kesharwanimart.in/api/forgot-password", {
         email: emailFromForm
       });
 
