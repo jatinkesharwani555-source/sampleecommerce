@@ -44,15 +44,15 @@ const ContactPage = () => {
 
             <p className={styles["contact-details"]}>
               <span>Mobile: </span>
-              <a className={styles['mobile-no-link']} href="tel:7706034432"></a>7706034432
+              <a className={styles['mobile-no-link']} href="tel:7706034432">7706034432</a>
             </p>
             <p className={styles["contact-details"]}>
               <span>WhatsApp: </span>
-              <a className={styles['mobile-no-link']} href="https://wa.me/7706034432"></a>7706034432
+              <a className={styles['mobile-no-link']} href="https://wa.me/7706034432">7706034432</a>
             </p>
             <p className={styles["contact-details"]}>
               <span>Email: </span>
-              <a className={styles['email-link']} href="mailto:jatinkesharwani555@gmail.com"></a>jatinkesharwani555@gmail.com
+              <a className={styles['email-link']} href="mailto:jatinkesharwani555@gmail.com">jatinkesharwani555@gmail.com</a>
             </p>
           </div>
         </div>
