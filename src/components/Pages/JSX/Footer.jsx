@@ -18,17 +18,26 @@ const Footer = () => {
             <div className={styles['body']}>
               <div className={styles['description-cnt']}>
                 <div className={styles['description']}>
-                  Where creativity meets craftsmanship. Founded with a passion for excellence, we specialize in delivering unique, high-quality products that blend tradition with innovation.
-                </div>
+                  Kesharwani Mart is your trusted online store offering quality products at affordable prices.
+                  Browse a wide range of items, add them to your cart, and enjoy a smooth and secure shopping experience.                </div>
               </div>
               <div className={styles['address-cnt']}>
                 <div className={styles['address']}>
-                  <span className={styles['address-quote']}>Address: </span><a href='https://maps.app.goo.gl/efkp2zxdk9yVjafx5' target='_blank' rel='noopener noreferrer' className={styles['address-link']}>Hanuman Mandir, Khatu Shyam Mandir, Naya Bazar, Bharwari Kaushambi, Uttar Pradesh, 212201</a>
+                  <span className={styles['address-quote']}>Address: </span>
+                  <a href='https://maps.app.goo.gl/efkp2zxdk9yVjafx5' target='_blank' rel='noopener noreferrer' className={styles['address-link']}>
+                    Hanuman Mandir, Khatu Shyam Mandir, Naya Bazar, Bharwari Kaushambi, Uttar Pradesh, 212201
+                  </a>
                 </div>
               </div>
               <div className={styles['contact-cnt']}>
                 <div className={styles['contact']}>
-                  <span className={styles['contact-quote']}>Contact: </span>0123456789, 9874563210
+                  <span className={styles['contact-quote']}>Contact: </span>
+                  <a href="tel:7706034432"></a>7706034432, 9874563210
+                </div>
+
+                <div className={styles["contact"]}>
+                  <span className={styles["contact-quote"]}>Email: </span>
+                  <a href="mailto:jatinkesharwani555@gmail.com">jatinkesharwani555@gmail.com</a>
                 </div>
               </div>
               <div className={styles['social-links-cnt']}>
@@ -40,6 +49,18 @@ const Footer = () => {
                   <li className={`${styles['social-link']}`}><Link to={"#"}><i className="fa-brands fa-twitter"></i></Link></li>
                 </ul>
               </div>
+
+              {/* Payment Methods */}
+              <div className={styles["payment-methods"]}>
+                <h3>We Accept</h3>
+                <div className={styles["payments"]}>
+                  <span>UPI</span>
+                  <span>Visa</span>
+                  <span>MasterCard</span>
+                  <span>Paytm</span>
+                </div>
+              </div>
+
             </div>
           </div>
           {/* Right Section  */}
@@ -64,6 +85,17 @@ const Footer = () => {
                 <li className={styles['link-li']}><Link className={styles['link']} to={'/'}>Events</Link></li>
               </ul>
 
+              {/* Newsletter */}
+              <div className={styles["newsletter"]}>
+                <h3>Subscribe</h3>
+                <p>Get updates about new products and offers.</p>
+
+                <div className={styles["newsletter-box"]}>
+                  <input type="email" placeholder="Enter your email" />
+                  <button>Subscribe</button>
+                </div>
+              </div>
+
               {/* <ul className={styles['ul']}>
                 <h2 className={styles['ul-heading']}>Links</h2>
                 <li className={styles['link-li']}><Link className={styles['link']} to={'/'}>About Us</Link></li>
@@ -83,6 +115,10 @@ const Footer = () => {
               </ul> */}
             </div>
           </div>
+        </div>
+        {/* COPYRIGHT */}
+        <div className={styles["copyright"]}>
+          © {new Date().getFullYear()} Kesharwani Mart. All Rights Reserved.
         </div>
       </div>
     </>
