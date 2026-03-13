@@ -31,8 +31,8 @@ const Footer = () => {
               </div>
               <div className={styles['contact-cnt']}>
                 <div className={styles['contact']}>
-                  <span className={styles['contact-quote']}>Contact: </span>
-                  <a href="tel:7706034432"></a>7706034432, 9874563210
+                  <span className={styles['contact-quote']}>Mobile: </span>
+                  <a href="tel:7706034432">7706034432, 9874563210</a>
                 </div>
 
                 <div className={styles["contact"]}>

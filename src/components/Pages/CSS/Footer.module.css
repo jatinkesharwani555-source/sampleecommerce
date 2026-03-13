@@ -120,6 +120,7 @@ border-radius:50%;
 color:#fff;
 font-size:16px;
 transition:0.3s;
+text-decoration: none;
 }
 
 .social-link a:hover{
@@ -199,6 +200,7 @@ transition:0.3s;
 .link:hover{
 color:#fff;
 }
+
 
 /* =========================
    NEWSLETTER
