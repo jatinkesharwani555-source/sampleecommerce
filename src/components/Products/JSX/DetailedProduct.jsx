@@ -36,7 +36,7 @@ const DetailedProduct = ({ loggedIn, role }) => {
     fetchCart();
   };
 
-  if (loading) return <LoadingSpinner text="Loading" />
+  if (loading) return <LoadingSpinner text="Fetching Products" />
   if (error) return <p className={styles["main-error"]}>{error}</p>;
   if (!product) return null;
 

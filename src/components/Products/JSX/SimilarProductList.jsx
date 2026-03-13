@@ -32,7 +32,7 @@ const SimilarProductList = ({ productCategory, productId }) => {
     fetchApi();
   }, [productCategory, productId]);
 
-  if (loading) return <LoadingSpinner text='Loading' />
+  if (loading) return <LoadingSpinner text='Fetching Products' />
   if (serverError) return <p className={styles['main-error']}>{serverError}</p>
 
   return (

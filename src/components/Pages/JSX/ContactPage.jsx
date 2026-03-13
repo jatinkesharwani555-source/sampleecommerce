@@ -43,10 +43,16 @@ const ContactPage = () => {
             </p>
 
             <p className={styles["contact-details"]}>
-              <span>Mobile: </span>1234567890
+              <span>Mobile: </span>
+              <a className={styles['mobile-no-link']} href="tel:7706034432"></a>7706034432
             </p>
             <p className={styles["contact-details"]}>
-              <span>Email: </span>kesharwaniMart@gmail.com
+              <span>WhatsApp: </span>
+              <a className={styles['mobile-no-link']} href="https://wa.me/7706034432"></a>7706034432
+            </p>
+            <p className={styles["contact-details"]}>
+              <span>Email: </span>
+              <a className={styles['email-link']} href="mailto:jatinkesharwani555@gmail.com"></a>jatinkesharwani555@gmail.com
             </p>
           </div>
         </div>

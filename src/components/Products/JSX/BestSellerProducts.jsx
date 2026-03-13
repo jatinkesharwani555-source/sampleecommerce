@@ -6,7 +6,7 @@ import LoadingSpinner from "../../LoadingSpinner";
 const BestSellerProducts = () => {
   const { products, loading, serverError } = useBestSellerProducts();
 
-  if (loading) return <LoadingSpinner text="Loading" />
+  if (loading) return <LoadingSpinner text="Fetching Products" />
   if (serverError) return <p className={styles["main-error"]}>{serverError}</p>;
 
   return (
