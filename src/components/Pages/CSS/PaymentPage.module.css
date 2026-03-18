@@ -1,0 +1,83 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+}
+
+.card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  width: 400px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #d32f2f;
+  margin-bottom: 10px;
+}
+
+.message {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.homeBtn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1976d2;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.homeBtn:hover {
+  background-color: #125aa0;
+}
+
+.storeBtn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #388e3c;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.storeBtn:hover {
+  background-color: #2e7d32;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

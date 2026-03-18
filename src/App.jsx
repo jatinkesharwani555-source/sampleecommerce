@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 import Layout from './components/Layout';
 import LoadingSpinner from './components/LoadingSpinner';
 import { authCheck } from './api/authCheck';
+import PaymentPage from './components/Pages/JSX/PaymentPage';
 
 // Lazy load heavy components
 const SignUp = lazy(() => import('./components/Login&Logout/JSX/SignUp'));
@@ -312,6 +313,16 @@ function App() {
         <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
           <Suspense fallback={<LoadingSpinner />}>
             <SearchProductsList loggedIn={isLoggedIn} role={role} />
+          </Suspense>
+        </Layout>
+      ),
+    },
+    {
+      path: "/payment",
+      element: (
+        <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
+          <Suspense fallback={<LoadingSpinner />}>
+            <PaymentPage loggedIn={isLoggedIn} role={role} />
           </Suspense>
         </Layout>
       ),
