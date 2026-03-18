@@ -1,6 +1,5 @@
 // // sitemap-generator.js
 // require('dotenv').config();
-// const Sitemap = require('react-router-sitemap').default;
 // const router = require('./src/App.jsx').default; // aapka React Router import
 
 // function generateSitemap() {
