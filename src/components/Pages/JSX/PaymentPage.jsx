@@ -1,40 +1,41 @@
 import React from 'react';
 import styles from '../CSS/PaymentPage.module.css';
+import { Link } from 'react-router-dom';
 
 const PaymentPage = () => {
   return (
-    <div className={styles.container}>
+        <div className={styles.container}>
       <div className={styles.card}>
 
         <div className={styles.icon}>⚠️</div>
 
         <h1 className={styles.title}>
-          Sorry for the inconvenience
+          असुविधा के लिए खेद है
         </h1>
 
         <p className={styles.message}>
-          We apologize for the inconvenience caused.
-          Currently, online checkout is not available.
+          हमें हुई असुविधा के लिए खेद है।
+          फिलहाल ऑनलाइन ऑर्डर/चेकआउट उपलब्ध नहीं है।
         </p>
 
         <p className={styles.message}>
-          Please visit our offline store to purchase or collect your items.
+          कृपया सामान खरीदने या लेने के लिए हमारे ऑफलाइन स्टोर पर विजिट करें।
         </p>
 
         <div className={styles.buttons}>
-          <button
+          <Link
+            to={"/"}
             className={styles.homeBtn}
-            onClick={() => window.location.href = "/"}
           >
-            Go to Home
-          </button>
+            होम पेज पर जाएं
+          </Link>
 
-          <button
+          <Link
+            to={"/contact-us"}
             className={styles.storeBtn}
-            onClick={() => window.location.href = "/contact"}
           >
-            Store Details
-          </button>
+            स्टोर की जानकारी
+          </Link>
         </div>
 
       </div>
