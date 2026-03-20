@@ -1,7 +1,7 @@
 import fs from "fs";
 import { SitemapStream, streamToPromise } from "sitemap";
 
-const hostname = "https://www.kesharwanimart.com"; // 👈 apna domain daal
+const hostname = "https://www.kesharwanimart.in"; // 👈 apna domain daal
 
 const sitemap = new SitemapStream({ hostname });
 
