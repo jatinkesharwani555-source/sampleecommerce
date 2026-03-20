@@ -5,6 +5,9 @@ import Layout from './components/Layout';
 import LoadingSpinner from './components/LoadingSpinner';
 import { authCheck } from './api/authCheck';
 import PaymentPage from './components/Pages/JSX/PaymentPage';
+import Orders from './components/Admin/Orders';
+import AddressPage from './components/Pages/JSX/AddressPage';
+import AddressForm from './components/Pages/JSX/AddressForm';
 
 // Lazy load heavy components
 const SignUp = lazy(() => import('./components/Login&Logout/JSX/SignUp'));
@@ -263,18 +266,30 @@ function App() {
         </Layout>
       ),
     },
-
-    // ===== Product Routes =====
     {
-      path: "/product/:id",
+      path: "/admin/delete-product/:id",
       element: (
-        <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
+        <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
           <Suspense fallback={<LoadingSpinner />}>
-            <DetailedProduct loggedIn={isLoggedIn} role={role} />
+            <AdminRoute isLoggedIn={isLoggedIn} role={role}>
+              <DeleteProduct />
+            </AdminRoute>
           </Suspense>
         </Layout>
       ),
     },
+    {
+      path: "/admin/all-orders",
+      element: (
+        <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Orders loggedIn={isLoggedIn} role={role} />
+          </Suspense>
+        </Layout>
+      ),
+    },
+    // ===== Product Routes =====
+
     {
       path: "/product/image-preview/:id/:image",
       element: (
@@ -323,6 +338,26 @@ function App() {
         <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
           <Suspense fallback={<LoadingSpinner />}>
             <PaymentPage loggedIn={isLoggedIn} role={role} />
+          </Suspense>
+        </Layout>
+      ),
+    },
+    {
+      path: "/address-page",
+      element: (
+        <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
+          <Suspense fallback={<LoadingSpinner />}>
+            <AddressPage loggedIn={isLoggedIn} role={role} />
+          </Suspense>
+        </Layout>
+      ),
+    },
+    {
+      path: "/address-form",
+      element: (
+        <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
+          <Suspense fallback={<LoadingSpinner />}>
+            <AddressForm loggedIn={isLoggedIn} role={role} />
           </Suspense>
         </Layout>
       ),

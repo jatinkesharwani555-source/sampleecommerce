@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* MAIN */
+.address-main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at top left,#ffd1d6,transparent 60%),
+    radial-gradient(circle at bottom right,#c7d2fe,transparent 60%),
+    linear-gradient(135deg,#e0e3e8,#d6dbff);
+}
+
+.address-container {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* HEADING */
+.heading {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 20px;
+
+  background: linear-gradient(90deg,#ff6b6b,#ff8c42,#ff3d00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ADDRESS LIST */
+.address-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* CARD */
+.card {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: 0.25s;
+  background: #fafafa;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* SELECTED */
+.active {
+  border: 2px solid #ff6b6b;
+  background: #fff;
+}
+
+/* EMPTY */
+.empty {
+  text-align: center;
+  color: #777;
+}
+
+/* BUTTONS */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* ADD BUTTON */
+.add-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px dashed #ff6b6b;
+  background: transparent;
+  color: #ff3d00;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.add-btn:hover {
+  background: #fff1f1;
+}
+
+/* CONTINUE BUTTON */
+.continue-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+
+  background: linear-gradient(135deg,#ff8c42,#ff3d00);
+  color: #fff;
+
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.continue-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* LOADING */
+.loading {
+  text-align: center;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .address-container {
+    padding: 20px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}

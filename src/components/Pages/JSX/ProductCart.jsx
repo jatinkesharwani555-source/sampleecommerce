@@ -129,7 +129,7 @@ const ProductCart = () => {
             </div>
 
             <div className={style["proceed-btn-cnt"]}>
-              <Link to="/payment" className={style["proceed-btn"]}>
+              <Link to="/address-page" className={style["proceed-btn"]}>
                 PROCEED TO CHECKOUT
               </Link>
             </div>
