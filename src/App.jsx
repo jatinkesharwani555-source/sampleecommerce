@@ -255,18 +255,7 @@ function App() {
         </Layout>
       ),
     },
-    {
-      path: "/admin/delete-product/:id",
-      element: (
-        <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <AdminRoute isLoggedIn={isLoggedIn} role={role}>
-            <DeleteProduct />
-          </AdminRoute>
-          {/* </Suspense> */}
-        </Layout>
-      ),
-    },
+
     {
       path: "/admin/all-orders",
       element: (
@@ -279,6 +268,16 @@ function App() {
     },
     // ===== Product Routes =====
 
+    {
+      path: "/product/:id",
+      element: (
+        <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
+          {/* <Suspense fallback={<LoadingSpinner />}> */}
+          <DetailedProduct />
+          {/* </Suspense> */}
+        </Layout>
+      ),
+    },
     {
       path: "/product/image-preview/:id/:image",
       element: (
