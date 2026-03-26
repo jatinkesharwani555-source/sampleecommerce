@@ -52,7 +52,7 @@ const DetailedProduct = ({ loggedIn, role }) => {
                   className={styles["single-img-cnt"]}
                   onClick={() => setSelectedImage(img)}
                 >
-                  <img src={img} alt="" />
+                  <img src={img} alt="" loading="lazy" />
                 </div>
               ))}
             </div>
@@ -63,6 +63,7 @@ const DetailedProduct = ({ loggedIn, role }) => {
                   src={selectedImage}
                   className={styles.image}
                   alt=""
+                  loading="lazy"
                 />
               </Link>
             </div>

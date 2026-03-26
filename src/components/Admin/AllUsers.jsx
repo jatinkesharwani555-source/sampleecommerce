@@ -42,7 +42,7 @@ const AllUsers = () => {
               <li className={styles['user-email']}>{user.userEmail}</li>
               <li className={styles['user-mobile']}>{user.userMobileNo}</li>
               <li className={styles['user-image']}>
-                <img className={styles['image']} src={user.userImage} alt='Image' />
+                <img className={styles['image']} src={user.userImage} alt='Image' loading='lazy' />
               </li>
             </ul>
           ))}

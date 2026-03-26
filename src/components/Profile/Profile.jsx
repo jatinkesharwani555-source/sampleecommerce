@@ -41,6 +41,7 @@ const Profile = () => {
             alt="Profile"
             className={styles.profileImage}
             onError={(e) => (e.target.src = "/images/default.webp")}
+            loading="lazy"
           />
         </div>
 

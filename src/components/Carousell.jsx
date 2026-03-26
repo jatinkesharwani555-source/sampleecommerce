@@ -32,6 +32,7 @@ const Carousell = ({ slides, autoPlay = true, delay = 3000 }) => {
           alt="banner"
           className={styles.image}
           onClick={()=> handleSlideClick(slides[current])}
+          loading="lazy"
         />
 
       <button className={styles.right} onClick={nextSlide}>❯</button>

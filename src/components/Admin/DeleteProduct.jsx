@@ -45,7 +45,7 @@ const DeleteProduct = () => {
 
       {product && (
         <Link to={`/product/${product._id}`}>
-          <img src={product?.productImage?.[0] || "/default-product-image.jpg"} alt="Product Image" />
+          <img src={product?.productImage?.[0] || "/default-product-image.jpg"} alt="Product Image" loading='lazy' />
           <div className={styles["product-info"]}>
             <p><strong>Name:</strong> {product.productMiniDesc}</p>
             <p><strong>Price:</strong> ₹{product.productPrice}</p>

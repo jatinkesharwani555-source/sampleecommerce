@@ -46,6 +46,7 @@ const ProductCart = () => {
                       src={item.productId.productImage?.[0] || "/images/default-product-image.jpg"}
                       alt={item.productId.productMiniDesc}
                       className={style["product-img"]}
+                      loading="lazy"
                     />
                   </div>
                 </Link>

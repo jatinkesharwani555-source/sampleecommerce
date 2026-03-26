@@ -46,6 +46,7 @@ const ProductImagePreview = () => {
           src={images[index]}
           style={imageStyle}
           alt=""
+          loading="lazy"
         />
       )}
 

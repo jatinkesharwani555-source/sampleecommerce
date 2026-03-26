@@ -27,6 +27,7 @@ const ShopByCategory = ({ slides = [] }) => {
               src={slide.image}
               alt={slide.title || slide.category}
               className={styles.carouselImage}
+              loading="lazy"
             />
 
             <p className={styles.carouselText}>

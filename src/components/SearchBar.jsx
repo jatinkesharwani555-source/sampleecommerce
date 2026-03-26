@@ -69,6 +69,7 @@ const SearchBar = ({ onSearch }) => {
               <img
                 src={item.productImage?.[0]}
                 alt={item.productMiniDesc}
+                loading="lazy"
               />              
               <span>{item.productMiniDesc}</span>
             </div>
