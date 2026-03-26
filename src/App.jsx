@@ -13,8 +13,7 @@ import AddressForm from './components/Pages/JSX/AddressForm';
 const SignUp = lazy(() => import('./components/Login&Logout/JSX/SignUp'));
 const Login = lazy(() => import('./components/Login&Logout/JSX/Login'));
 const Logout = lazy(() => import('./components/Login&Logout/JSX/Logout'));
-// const HomePage = lazy(() => import('./components/Pages/JSX/HomePage'));
-import HomePage from './components/Pages/JSX/HomePage';
+const HomePage = lazy(() => import('./components/Pages/JSX/HomePage'));
 const AboutPage = lazy(() => import('./components/Pages/JSX/AboutPage'));
 const ContactPage = lazy(() => import('./components/Pages/JSX/ContactPage'));
 const Profile = lazy(() => import('./components/Profile/Profile'));
@@ -79,9 +78,9 @@ function App() {
       path: "/",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <HomePage />
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <HomePage />
+          </Suspense>
         </Layout>
       ),
     },
@@ -89,9 +88,9 @@ function App() {
       path: "/signup",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          {!isLoggedIn ? <SignUp /> : <Navigate to="/" />}
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            {!isLoggedIn ? <SignUp /> : <Navigate to="/" />}
+          </Suspense>
         </Layout>
       ),
     },
@@ -99,9 +98,9 @@ function App() {
       path: "/login",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          {!isLoggedIn ? <Login loggedIn={isLoggedIn} setLoggedIn={setIsLoggedIn} setRole={setRole} /> : <Navigate to="/" />}
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            {!isLoggedIn ? <Login loggedIn={isLoggedIn} setLoggedIn={setIsLoggedIn} setRole={setRole} /> : <Navigate to="/" />}
+          </Suspense>
         </Layout>
       ),
     },
@@ -109,9 +108,9 @@ function App() {
       path: "/logout",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <Logout loggedIn={isLoggedIn} setLoggedIn={setIsLoggedIn} setRole={setRole} />
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <Logout loggedIn={isLoggedIn} setLoggedIn={setIsLoggedIn} setRole={setRole} />
+          </Suspense>
         </Layout>
       ),
     },
@@ -119,9 +118,9 @@ function App() {
       path: "/about-us",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <AboutPage />
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <AboutPage />
+          </Suspense>
         </Layout>
       ),
     },
@@ -129,9 +128,9 @@ function App() {
       path: "/contact-us",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <ContactPage />
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <ContactPage />
+          </Suspense>
         </Layout>
       ),
     },
@@ -139,11 +138,11 @@ function App() {
       path: "/profile",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <ProtectedRoute isLoggedIn={isLoggedIn}>
-            <Profile />
-          </ProtectedRoute>
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <ProtectedRoute isLoggedIn={isLoggedIn}>
+              <Profile />
+            </ProtectedRoute>
+          </Suspense>
         </Layout>
       ),
     },
@@ -151,11 +150,11 @@ function App() {
       path: "/profile-edit",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <ProtectedRoute isLoggedIn={isLoggedIn}>
-            <ProfileEdit />
-          </ProtectedRoute>
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <ProtectedRoute isLoggedIn={isLoggedIn}>
+              <ProfileEdit />
+            </ProtectedRoute>
+          </Suspense>
         </Layout>
       ),
     },
@@ -163,11 +162,11 @@ function App() {
       path: "/profile-delete",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <ProtectedRoute isLoggedIn={isLoggedIn}>
-            <ProfileDelete />
-          </ProtectedRoute>
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <ProtectedRoute isLoggedIn={isLoggedIn}>
+              <ProfileDelete />
+            </ProtectedRoute>
+          </Suspense>
         </Layout>
       ),
     },
@@ -175,9 +174,9 @@ function App() {
       path: "/forgot-password",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <ForgotPassword />
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <ForgotPassword />
+          </Suspense>
         </Layout>
       ),
     },
@@ -185,11 +184,11 @@ function App() {
       path: "/change-password",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <ProtectedRoute isLoggedIn={isLoggedIn}>
-            <ChangePassword />
-          </ProtectedRoute>
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <ProtectedRoute isLoggedIn={isLoggedIn}>
+              <ChangePassword />
+            </ProtectedRoute>
+          </Suspense>
         </Layout>
       ),
     },
@@ -199,11 +198,11 @@ function App() {
       path: "/admin/dashboard",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <AdminRoute isLoggedIn={isLoggedIn} role={role}>
-            <Dashboard />
-          </AdminRoute>
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <AdminRoute isLoggedIn={isLoggedIn} role={role}>
+              <Dashboard />
+            </AdminRoute>
+          </Suspense>
         </Layout>
       ),
     },
@@ -211,11 +210,11 @@ function App() {
       path: "/admin/all-users",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <AdminRoute isLoggedIn={isLoggedIn} role={role}>
-            <AllUsers />
-          </AdminRoute>
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <AdminRoute isLoggedIn={isLoggedIn} role={role}>
+              <AllUsers />
+            </AdminRoute>
+          </Suspense>
         </Layout>
       ),
     },
@@ -223,11 +222,11 @@ function App() {
       path: "/admin/create-product",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <AdminRoute isLoggedIn={isLoggedIn} role={role}>
-            <CreateProduct />
-          </AdminRoute>
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <AdminRoute isLoggedIn={isLoggedIn} role={role}>
+              <CreateProduct />
+            </AdminRoute>
+          </Suspense>
         </Layout>
       ),
     },
@@ -235,11 +234,11 @@ function App() {
       path: "/admin/manage-products",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <AdminRoute isLoggedIn={isLoggedIn} role={role}>
-            <ManageProducts />
-          </AdminRoute>
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <AdminRoute isLoggedIn={isLoggedIn} role={role}>
+              <ManageProducts />
+            </AdminRoute>
+          </Suspense>
         </Layout>
       ),
     },
@@ -247,27 +246,37 @@ function App() {
       path: "/admin/edit-product/:id",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <AdminRoute isLoggedIn={isLoggedIn} role={role}>
-            <EditProduct />
-          </AdminRoute>
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <AdminRoute isLoggedIn={isLoggedIn} role={role}>
+              <EditProduct />
+            </AdminRoute>
+          </Suspense>
         </Layout>
       ),
     },
-
+    {
+      path: "/admin/delete-product/:id",
+      element: (
+        <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
+          <Suspense fallback={<LoadingSpinner />}>
+            <AdminRoute isLoggedIn={isLoggedIn} role={role}>
+              <DeleteProduct />
+            </AdminRoute>
+          </Suspense>
+        </Layout>
+      ),
+    },
     {
       path: "/admin/all-orders",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <Orders loggedIn={isLoggedIn} role={role} />
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <Orders loggedIn={isLoggedIn} role={role} />
+          </Suspense>
         </Layout>
       ),
     },
     // ===== Product Routes =====
-
     {
       path: "/product/:id",
       element: (
@@ -282,9 +291,9 @@ function App() {
       path: "/product/image-preview/:id/:image",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
-          {/* <Suspense fallback={<LoadingSpinner text='Loading Image...' />}> */}
-          <ProductImagePreview />
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner text='Loading Image...' />}>
+            <ProductImagePreview />
+          </Suspense>
         </Layout>
       ),
     },
@@ -292,11 +301,11 @@ function App() {
       path: "/product-cart",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <ProtectedRoute isLoggedIn={isLoggedIn}>
-            <ProductCart />
-          </ProtectedRoute>
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <ProtectedRoute isLoggedIn={isLoggedIn}>
+              <ProductCart />
+            </ProtectedRoute>
+          </Suspense>
         </Layout>
       ),
     },
@@ -304,9 +313,9 @@ function App() {
       path: "/product-list",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <CategoryWiseProductList />
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <CategoryWiseProductList />
+          </Suspense>
         </Layout>
       ),
     },
@@ -314,9 +323,9 @@ function App() {
       path: "/products",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <SearchProductsList loggedIn={isLoggedIn} role={role} />
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <SearchProductsList loggedIn={isLoggedIn} role={role} />
+          </Suspense>
         </Layout>
       ),
     },
@@ -324,9 +333,9 @@ function App() {
       path: "/payment",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <PaymentPage loggedIn={isLoggedIn} role={role} />
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <PaymentPage loggedIn={isLoggedIn} role={role} />
+          </Suspense>
         </Layout>
       ),
     },
@@ -334,9 +343,9 @@ function App() {
       path: "/address-page",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <AddressPage loggedIn={isLoggedIn} role={role} />
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <AddressPage loggedIn={isLoggedIn} role={role} />
+          </Suspense>
         </Layout>
       ),
     },
@@ -344,9 +353,9 @@ function App() {
       path: "/address-form",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <AddressForm loggedIn={isLoggedIn} role={role} />
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <AddressForm loggedIn={isLoggedIn} role={role} />
+          </Suspense>
         </Layout>
       ),
     },
@@ -356,19 +365,15 @@ function App() {
       path: "*",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={true}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <PageNotFound />
-          {/* </Suspense> */}
+          <Suspense fallback={<LoadingSpinner />}>
+            <PageNotFound />
+          </Suspense>
         </Layout>
       ),
     },
   ]);
 
-  return (
-    <Suspense fallback={<LoadingSpinner />}>
-      <RouterProvider router={router} />
-    </Suspense>
-  )
+  return <RouterProvider router={router} />;
 }
 
 export default App;
