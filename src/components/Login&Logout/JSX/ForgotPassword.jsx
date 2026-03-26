@@ -4,6 +4,7 @@ import axios from 'axios';
 import styles from '../CSS/ForgotPassword.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { forgotPasswordApi } from '../../../api/forgotPassword.api';
 
 const ForgotPassword = () => {
   const [emailFromForm, setEmailFromForm] = useState("");
@@ -60,10 +61,10 @@ const ForgotPassword = () => {
     if (!validate1()) return;
     setError({});
     try {
-      const response = await axios.post("https://api.kesharwanimart.in/api/forgot-password", {
-        email: emailFromForm
-      });
-
+      const response = await forgotPasswordApi({ email: emailFromForm });
+      // const response = await axios.post("https://api.kesharwanimart.in/api/forgot-password", {
+      //   email: emailFromForm
+      // });
       if (!response.data.success) {
         setError({ errorMessage: response.data.message });
         setSuccessfullyFetch(false);

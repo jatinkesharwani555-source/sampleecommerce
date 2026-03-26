@@ -1,0 +1,1 @@
+export { FaHome, FaInfoCircle, FaPhoneAlt, FaShoppingCart, FaUser, FaUserPlus, FaBars, FaTimes, FaBoxOpen, FaUserShield, FaClipboardList, FaPlusCircle, FaUsers } from "react-icons/fa";

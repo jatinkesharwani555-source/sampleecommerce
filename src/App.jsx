@@ -1,15 +1,16 @@
 import { useEffect, useState, Suspense, lazy } from 'react';
 import './App.css';
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
-import Layout from './components/Layout';
+// import Layout from './components/Layout';
 import LoadingSpinner from './components/LoadingSpinner';
-import { authCheck } from './api/authCheck';
-import PaymentPage from './components/Pages/JSX/PaymentPage';
-import Orders from './components/Admin/Orders';
-import AddressPage from './components/Pages/JSX/AddressPage';
-import AddressForm from './components/Pages/JSX/AddressForm';
+// import { authCheck } from './api/authCheck';
 
 // Lazy load heavy components
+const PaymentPage = lazy(() => import('./components/Pages/JSX/PaymentPage'));
+const Orders = lazy(() => import('./components/Admin/Orders'));
+const AddressPage = lazy(() => import('./components/Pages/JSX/AddressPage'));
+const AddressForm = lazy(() => import('./components/Pages/JSX/AddressForm'));
+const Layout = lazy(() => import('./components/Layout'));
 const SignUp = lazy(() => import('./components/Login&Logout/JSX/SignUp'));
 const Login = lazy(() => import('./components/Login&Logout/JSX/Login'));
 const Logout = lazy(() => import('./components/Login&Logout/JSX/Logout'));
@@ -55,6 +56,7 @@ function App() {
   // ===== Check auth status =====
   useEffect(() => {
     const checkAuth = async () => {
+      const { authCheck } = await import('./api/authCheck');
       try {
         const res = await authCheck();
         if (res.data.success) {
@@ -281,9 +283,9 @@ function App() {
       path: "/product/:id",
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
-          {/* <Suspense fallback={<LoadingSpinner />}> */}
+          <Suspense fallback={<LoadingSpinner />}>
           <DetailedProduct loggedIn={isLoggedIn} role={role} />
-          {/* </Suspense> */}
+          </Suspense>
         </Layout>
       ),
     },

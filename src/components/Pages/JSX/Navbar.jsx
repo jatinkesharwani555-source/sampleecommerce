@@ -16,7 +16,7 @@ import {
   FaClipboardList,
   FaPlusCircle,
   FaUsers
-} from "react-icons/fa";
+} from "../../../react-icons.js";
 
 const Navbar = ({ loggedIn, role }) => {
   const [open, setOpen] = useState(false);
