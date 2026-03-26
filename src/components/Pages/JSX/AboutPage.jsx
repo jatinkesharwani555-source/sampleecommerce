@@ -18,7 +18,7 @@ const AboutPage = () => {
           <div className={styles['image-cnt']}>
             <img 
               className={styles['image']} 
-              src="/shop.webp" 
+              src="/images/shop.webp" 
               alt="Kesharwani Mart Shop" 
               loading="lazy" 
             />

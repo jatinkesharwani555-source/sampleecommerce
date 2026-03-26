@@ -37,10 +37,10 @@ const Profile = () => {
         {/* Profile Image */}
         <div className={styles.imageSection}>
           <img
-            src={presentUser.userImage || "./default.webp"}
+            src={presentUser.userImage || "./images/default.webp"}
             alt="Profile"
             className={styles.profileImage}
-            onError={(e) => (e.target.src = "/default.webp")}
+            onError={(e) => (e.target.src = "/images/default.webp")}
           />
         </div>
 

@@ -43,7 +43,7 @@ const ProductCart = () => {
                 <Link to={`/product/${item.productId._id}`}>
                   <div className={style["part1-image"]}>
                     <img
-                      src={item.productId.productImage?.[0] || "/default-product-image.jpg"}
+                      src={item.productId.productImage?.[0] || "/images/default-product-image.jpg"}
                       alt={item.productId.productMiniDesc}
                       className={style["product-img"]}
                     />

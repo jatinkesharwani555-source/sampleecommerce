@@ -22,7 +22,7 @@ const ContactPage = () => {
           <div className={styles["image-cnt"]}>
             <img
               className={styles["image"]}
-              src="/contactpagerandom.webp"
+              src="/images/contactpagerandom.webp"
               alt="Contact Page Image"
               loading="lazy"
             />
