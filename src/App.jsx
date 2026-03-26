@@ -282,7 +282,7 @@ function App() {
       element: (
         <Layout loggedIn={isLoggedIn} role={role} showFooter={false}>
           {/* <Suspense fallback={<LoadingSpinner />}> */}
-          <DetailedProduct />
+          <DetailedProduct loggedIn={isLoggedIn} role={role} />
           {/* </Suspense> */}
         </Layout>
       ),
