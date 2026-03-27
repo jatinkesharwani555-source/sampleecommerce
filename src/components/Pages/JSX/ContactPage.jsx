@@ -74,7 +74,7 @@ const ContactPage = () => {
           </div>
         </div>
 
-        <div className={styles["map-cnt"]}>
+        {/* <div className={styles["map-cnt"]}>
           <iframe
             src="https://www.google.com/maps?q=Hanuman%20Mandir%20Bharwari%20Kaushambi&output=embed"
             width="100%"
@@ -82,7 +82,7 @@ const ContactPage = () => {
             style={{ border: 0 }}
             loading="lazy"
           ></iframe>
-        </div>
+        </div> */}
 
         <div className={styles["second-section"]}>
           <h1 className={styles["get-in-touch-quote"]}>Request To Call</h1>
