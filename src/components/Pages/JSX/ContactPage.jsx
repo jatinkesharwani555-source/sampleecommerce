@@ -1,17 +1,24 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "../CSS/ContactPage.module.css";
 import useContactForm from "../../../hooks/useContactForm.js";
 import { useEffect } from "react";
 import { FaPhone, FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const ContactPage = () => {
   const navigate = useNavigate();
   const { data, handleChange, handleSubmit, loading, error, serverError, success } = useContactForm(navigate);
 
   useEffect(() => {
-    document.title = "Contact Us | Kesharwani Mart";
+    // document.title = "Contact Us | Kesharwani Mart";
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+
+  <Helmet>
+    <title>Contact Us | Kesharwani Mart</title>
+    <meta name="description" content="Contact Kesharwani Mart for any queries or support." />
+    <link rel="canonical" href="https://www.kesharwanimart.in/contact-us" />
+  </Helmet>
 
   return (
     <div className={styles["contactpage-main-cnt"]} id="contact-us">

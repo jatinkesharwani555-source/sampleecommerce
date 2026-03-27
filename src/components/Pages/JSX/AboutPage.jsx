@@ -1,12 +1,19 @@
 import { useEffect } from 'react';
 import styles from '../CSS/AboutPage.module.css';
+import { Helmet } from 'react-helmet-async';
 
 const AboutPage = () => {
   // For SEO and scroll to top
   useEffect(() => {
-    document.title = "About Us | Kesharwani Mart";
+    // document.title = "About Us | Kesharwani Mart";
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
+
+  <Helmet>
+    <title>About Us | Kesharwani Mart</title>
+    <meta name="description" content="About Us for more information about Kesharwani Mart." />
+    <link rel="canonical" href="https://www.kesharwanimart.in/about-us" />
+  </Helmet>
 
   return (
     <div className={styles['aboutpage-main-cnt']}>
@@ -16,11 +23,11 @@ const AboutPage = () => {
         {/* First Section */}
         <div className={styles['first-section']}>
           <div className={styles['image-cnt']}>
-            <img 
-              className={styles['image']} 
-              src="/images/shop.webp" 
-              alt="Kesharwani Mart Shop" 
-              loading="lazy" 
+            <img
+              className={styles['image']}
+              src="/images/shop.webp"
+              alt="Kesharwani Mart Shop"
+              loading="lazy"
             />
           </div>
           <div className={styles['description-cnt']}>

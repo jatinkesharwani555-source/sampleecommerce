@@ -7,13 +7,21 @@ import AllProductList from '../../Products/JSX/AllProductList.jsx';
 import { homeSlides } from '../../../constants/homeSlides.js';
 import ShopByCategory from '../../Products/JSX/ShopByCategory.jsx';
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const HomePage = () => {
   // For SEO 
   useEffect(() => {
-    document.title = "Home Page | Kesharwani Mart";
+    // document.title = "Home Page | Kesharwani Mart";
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
+
+  <Helmet>
+    <title>Kesharwani Mart - Gift Shop</title>
+    <meta name="description" content="Best Prasad & Gift Store in Bharwari Kaushambi." />
+    <link rel="canonical" href="https://www.kesharwanimart.in/" />
+  </Helmet>
+
   return (
     <>
       <div className={styles['mainpage-main-cnt']} id='home'>
